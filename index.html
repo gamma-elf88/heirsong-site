@@ -281,31 +281,57 @@
       text-align: center;
     }
 
-    /* Legal sections */
-    .legal {
+    /* Legal sections — collapsed by default, minimal real estate */
+    .legal-wrap {
       background: var(--cream-soft);
-      padding: 72px 0;
+      padding: 32px 0 16px;
       border-top: 1px solid var(--rule);
     }
-    .legal h2 {
-      font-size: 28px;
-      margin-bottom: 12px;
+    .legal-wrap details {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 14px 28px;
+      border-bottom: 1px solid var(--rule);
     }
-    .legal h3 {
-      font-size: 18px;
-      font-weight: 500;
-      margin-top: 28px;
-      margin-bottom: 8px;
+    .legal-wrap details:last-child { border-bottom: none; }
+    .legal-wrap summary {
+      cursor: pointer;
+      font-family: 'Lora', serif;
+      font-size: 13px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--charcoal-soft);
+      list-style: none;
+      padding: 6px 0;
+      transition: color 200ms ease;
     }
-    .legal p, .legal li {
-      font-size: 15px;
+    .legal-wrap summary::-webkit-details-marker { display: none; }
+    .legal-wrap summary::after {
+      content: '+';
+      float: right;
+      font-size: 16px;
+      color: var(--terracotta);
+    }
+    .legal-wrap details[open] summary::after { content: '−'; }
+    .legal-wrap summary:hover { color: var(--charcoal); }
+    .legal-wrap .legal-body {
+      padding: 16px 0 8px;
+      font-size: 13px;
+      line-height: 1.65;
       color: var(--charcoal-soft);
     }
-    .legal ul {
-      margin-left: 22px;
-      margin-bottom: 14px;
+    .legal-wrap .legal-body h3 {
+      font-family: 'Lora', serif;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--charcoal);
+      margin-top: 14px;
+      margin-bottom: 4px;
     }
-    .legal li { padding: 4px 0; }
+    .legal-wrap .legal-body h3:first-child { margin-top: 0; }
+    .legal-wrap .legal-body p { margin-bottom: 8px; }
+    .legal-wrap .legal-body ul { margin: 6px 0 8px 18px; }
+    .legal-wrap .legal-body li { padding: 2px 0; }
 
     /* Subtle entrance */
     @media (prefers-reduced-motion: no-preference) {
@@ -404,92 +430,44 @@
     </section>
   </div>
 
-  <!-- Legal scaffolding (in-page anchors; will move to separate pages) -->
-  <section class="legal" id="mentions-legales">
-    <div class="container">
-      <div class="eyebrow">Mentions légales</div>
-      <h2>Mentions légales</h2>
-      <p>Conformément à l'article 1-1 de la loi n° 2004-575 du 21 juin 2004 pour la confiance dans l'économie numérique (LCEN), modifié par la loi n° 2024-449 du 21 mai 2024, les utilisateurs du site heirsong.fr sont informés des éléments suivants&nbsp;:</p>
+  <!-- Legal scaffolding: collapsed accordions, minimal real estate -->
+  <div class="legal-wrap" id="legal">
+    <details id="mentions-legales">
+      <summary>Mentions légales</summary>
+      <div class="legal-body">
+        <p>Conformément à l'article 6-III de la loi n° 2004-575 du 21 juin 2004 (LCEN)&nbsp;:</p>
+        <h3>Éditeur</h3>
+        <p>[Prénom Nom], entrepreneur individuel · Nom commercial&nbsp;: HeirSong · SIRET&nbsp;: 102 715 877 000 19 · APE&nbsp;: 7022Z (principal) — 74.10Z (secondaire, design spécialisé, déclaration en cours) · 19 rue du Général Appert, 75016 Paris, France · <a href="mailto:hello@heirsong.fr">hello@heirsong.fr</a> · TVA non applicable, art. 293 B du CGI.</p>
+        <h3>Directeur de la publication</h3>
+        <p>[Prénom Nom]</p>
+        <h3>Hébergement</h3>
+        <p>Vercel Inc. — 340 S Lemon Ave #4133, Walnut, CA 91789, États-Unis — <a href="https://vercel.com" target="_blank" rel="noopener">vercel.com</a></p>
+        <h3>Propriété intellectuelle</h3>
+        <p>L'ensemble des contenus présents sur ce site sont la propriété exclusive de HeirSong, sauf mention contraire. Toute reproduction est interdite sans autorisation écrite préalable.</p>
+      </div>
+    </details>
 
-      <h3>Éditeur du site</h3>
-      <p>HeirSong — entreprise individuelle (auto-entrepreneur)<br />
-      Statut&nbsp;: Entrepreneur individuel — immatriculation en cours auprès de l'INPI / formalites.entreprises.gouv.fr<br />
-      Activité&nbsp;: Activités spécialisées de design (NAF 74.10Z)<br />
-      Contact&nbsp;: <a href="mailto:hello@heirsong.fr">hello@heirsong.fr</a></p>
-
-      <h3>Directeur de la publication</h3>
-      <p>[Nom complet du fondateur — à compléter]</p>
-
-      <h3>Hébergement</h3>
-      <p>OVH SAS — 2 rue Kellermann, 59100 Roubaix, France — RCS Lille Métropole 424 761 419 — Tél. +33 9 72 10 10 07 — <a href="https://www.ovh.com" target="_blank" rel="noopener">www.ovh.com</a></p>
-
-      <h3>Propriété intellectuelle</h3>
-      <p>L'ensemble des contenus présents sur ce site (textes, visuels, modèles téléchargeables) sont la propriété exclusive de HeirSong, sauf mention contraire. Toute reproduction, représentation ou rediffusion, totale ou partielle, est interdite sans autorisation écrite préalable.</p>
-    </div>
-  </section>
-
-  <section class="legal" id="cgv">
-    <div class="container">
-      <div class="eyebrow">Conditions Générales de Vente</div>
-      <h2>Conditions Générales de Vente</h2>
-      <p><em>Version provisoire — finalisation en cours.</em> Pour toute commande passée via Stan Store ou Etsy avant la publication de la version définitive, les conditions ci-dessous s'appliquent à titre indicatif et sont complétées par les conditions de la plateforme concernée.</p>
-
-      <h3>Produits</h3>
-      <p>HeirSong commercialise des produits numériques (modèles, journaux, scripts cérémoniels, kits) livrés exclusivement par téléchargement, sans support matériel. Aucun produit physique n'est expédié.</p>
-
-      <h3>Prix</h3>
-      <p>Les prix sont indiqués TTC en euros sur la plateforme de vente (Stan Store, Etsy). HeirSong relève actuellement de la franchise en base de TVA — Article 293 B du Code général des impôts. Mention&nbsp;: «&nbsp;TVA non applicable, art. 293 B du CGI&nbsp;».</p>
-
-      <h3>Droit de rétractation</h3>
-      <p>Conformément à l'article L. 221-28 13° du Code de la consommation, le droit de rétractation de 14 jours ne peut être exercé pour «&nbsp;la fourniture d'un contenu numérique sans support matériel dont l'exécution a commencé avant la fin du délai de rétractation et, si le contrat soumet le consommateur à une obligation de payer, dont l'exécution a commencé avec son accord préalable et exprès et avec la reconnaissance par lui de la perte de son droit de rétractation, lorsque le contenu numérique aura été fourni&nbsp;».</p>
-      <p>En validant votre commande, vous demandez expressément la fourniture immédiate du contenu numérique et reconnaissez perdre votre droit de rétractation de 14 jours dès le téléchargement.</p>
-
-      <h3>Garantie et réclamations</h3>
-      <p>En cas de problème technique (fichier corrompu, format inadéquat, lien de téléchargement défaillant), contactez <a href="mailto:hello@heirsong.fr">hello@heirsong.fr</a> sous 7 jours&nbsp;: nous renvoyons ou remboursons sous 48&nbsp;heures.</p>
-
-      <h3>Médiation</h3>
-      <p>Conformément à l'article L. 612-1 du Code de la consommation, un médiateur de la consommation sera désigné dès l'immatriculation de l'entreprise.</p>
-
-      <h3>Droit applicable</h3>
-      <p>Les présentes CGV sont soumises au droit français. Tout litige relèvera de la compétence des tribunaux français, sous réserve de l'application des règles de protection du consommateur.</p>
-    </div>
-  </section>
-
-  <section class="legal" id="confidentialite">
-    <div class="container">
-      <div class="eyebrow">Politique de confidentialité</div>
-      <h2>Politique de confidentialité</h2>
-      <p><em>Version provisoire — finalisation en cours.</em> Cette politique sera mise à jour avec les références complètes au registre des activités de traitement (CNIL) dès l'immatriculation de l'entreprise.</p>
-
-      <h3>Responsable du traitement</h3>
-      <p>HeirSong — entreprise individuelle (immatriculation en cours) — <a href="mailto:hello@heirsong.fr">hello@heirsong.fr</a></p>
-
-      <h3>Données collectées</h3>
-      <ul>
-        <li><strong>Adresse e-mail</strong> — pour l'envoi du compagnon gratuit «&nbsp;A Gentle 7 Days&nbsp;» et des e-mails de bienvenue, sur la base du consentement (RGPD art. 6.1.a)</li>
-        <li><strong>Prénom de l'animal et mois du décès</strong> (facultatifs) — utilisés uniquement pour personnaliser les e-mails d'anniversaire de remembrance, sur la base du consentement explicite et granulaire</li>
-        <li><strong>Données de commande</strong> (nom, e-mail, historique d'achat) — traitées par Stan Store et Etsy en tant que sous-traitants, pour l'exécution du contrat (RGPD art. 6.1.b)</li>
-      </ul>
-
-      <h3>Conservation</h3>
-      <p>Les données de la liste e-mail sont conservées tant que vous restez abonné. Vous pouvez vous désabonner à tout moment via le lien présent dans chaque e-mail. Les données de commande sont conservées conformément aux obligations légales comptables (10 ans).</p>
-
-      <h3>Sous-traitants</h3>
-      <ul>
-        <li>Brevo (Sendinblue SAS, France) — envoi d'e-mails — serveurs UE — ISO 27001</li>
-        <li>Stan Store (Stan, États-Unis) — hébergement de la page de capture — transfert encadré par les clauses contractuelles types</li>
-        <li>Etsy Ireland UC — plateforme de vente — RGPD applicable</li>
-        <li>OVH SAS — hébergement du site — France</li>
-      </ul>
-
-      <h3>Vos droits</h3>
-      <p>Conformément aux articles 15 à 22 du RGPD, vous disposez d'un droit d'accès, de rectification, d'effacement, de limitation, d'opposition et de portabilité. Pour exercer ces droits&nbsp;: <a href="mailto:hello@heirsong.fr">hello@heirsong.fr</a>.</p>
-      <p>Vous avez également le droit d'introduire une réclamation auprès de la CNIL — <a href="https://www.cnil.fr" target="_blank" rel="noopener">cnil.fr</a>.</p>
-
-      <h3>Cookies</h3>
-      <p>Le site heirsong.fr n'utilise actuellement aucun cookie de mesure d'audience ni de traceur publicitaire. Seuls les cookies strictement nécessaires au fonctionnement du site sont susceptibles d'être déposés.</p>
-    </div>
-  </section>
+    <details id="confidentialite">
+      <summary>Politique de confidentialité</summary>
+      <div class="legal-body">
+        <h3>Responsable du traitement</h3>
+        <p>[Prénom Nom], entrepreneur individuel — nom commercial HeirSong — SIRET 102 715 877 000 19 — <a href="mailto:hello@heirsong.fr">hello@heirsong.fr</a></p>
+        <h3>Données collectées</h3>
+        <ul>
+          <li><strong>Adresse e-mail</strong> — envoi du compagnon gratuit «&nbsp;A Gentle 7 Days&nbsp;» et des e-mails de bienvenue (RGPD art. 6.1.a, consentement)</li>
+          <li><strong>Prénom de l'animal et mois du décès</strong> (facultatifs) — personnalisation des e-mails de remembrance, sur consentement explicite</li>
+        </ul>
+        <p>Aucun cookie de mesure d'audience ni traceur publicitaire.</p>
+        <h3>Sous-traitants</h3>
+        <ul>
+          <li>Brevo (Sendinblue SAS, France) — envoi d'e-mails — serveurs UE</li>
+          <li>Vercel Inc. (États-Unis) — hébergement — clauses contractuelles types</li>
+        </ul>
+        <h3>Conservation et droits</h3>
+        <p>Données conservées tant que vous restez abonné. Désabonnement en un clic. Conformément aux articles 15 à 22 du RGPD, vous disposez d'un droit d'accès, de rectification, d'effacement, d'opposition et de portabilité&nbsp;: <a href="mailto:hello@heirsong.fr">hello@heirsong.fr</a>. Réclamation auprès de la CNIL — <a href="https://www.cnil.fr" target="_blank" rel="noopener">cnil.fr</a>.</p>
+      </div>
+    </details>
+  </div>
 
   <footer>
     <div class="container">
@@ -503,7 +481,6 @@
           <h4>Informations légales</h4>
           <ul>
             <li><a href="#mentions-legales">Mentions légales</a></li>
-            <li><a href="#cgv">Conditions Générales de Vente</a></li>
             <li><a href="#confidentialite">Politique de confidentialité</a></li>
             <li><a href="#resources">Resources for grief</a></li>
           </ul>
