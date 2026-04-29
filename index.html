@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HeirSong — Rituals &amp; keepsakes for the moments that matter most</title>
+  <meta name="description" content="HeirSong makes soft, dignified pet memorial templates, ceremony scripts, grief journals and tribute keepsakes — for the day after, the first month, and every anniversary that follows." />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="HeirSong" />
+  <meta property="og:description" content="Rituals & keepsakes for the moments that matter most." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://heirsong.fr" />
+  <meta property="og:locale" content="en_US" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --sage: #A8B5A0;
+      --terracotta: #C9907E;
+      --cream: #F5F0E8;
+      --cream-soft: #FBF8F2;
+      --charcoal: #3A3A3A;
+      --charcoal-soft: #5A5A5A;
+      --rule: #E4DDD0;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Lora', Georgia, serif;
+      font-weight: 400;
+      font-size: 17px;
+      line-height: 1.7;
+      color: var(--charcoal);
+      background: var(--cream);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Cormorant Garamond', 'Garamond', serif;
+      font-weight: 500;
+      letter-spacing: 0.005em;
+      color: var(--charcoal);
+    }
+
+    a {
+      color: var(--terracotta);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 200ms ease, color 200ms ease;
+    }
+    a:hover { border-color: var(--terracotta); }
+
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 28px;
+    }
+
+    /* Header */
+    header {
+      padding: 56px 0 0 0;
+      text-align: center;
+    }
+    .wordmark {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 500;
+      font-size: 28px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--charcoal);
+    }
+    .wordmark-rule {
+      width: 36px;
+      height: 1px;
+      background: var(--terracotta);
+      margin: 18px auto 0;
+    }
+
+    /* Hero */
+    .hero {
+      padding: 88px 0 72px;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: clamp(34px, 6vw, 52px);
+      line-height: 1.18;
+      font-style: italic;
+      font-weight: 400;
+      max-width: 16ch;
+      margin: 0 auto 28px;
+    }
+    .hero .tagline {
+      font-family: 'Lora', serif;
+      font-style: italic;
+      color: var(--charcoal-soft);
+      font-size: 19px;
+      max-width: 32ch;
+      margin: 0 auto;
+    }
+
+    /* Sections */
+    section {
+      padding: 64px 0;
+      border-top: 1px solid var(--rule);
+    }
+    section:first-of-type { border-top: none; }
+
+    .eyebrow {
+      font-family: 'Lora', serif;
+      font-size: 12px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--sage);
+      margin-bottom: 18px;
+      font-weight: 500;
+    }
+    section h2 {
+      font-size: clamp(28px, 4vw, 36px);
+      font-weight: 500;
+      margin-bottom: 24px;
+      line-height: 1.25;
+    }
+    section p {
+      max-width: 60ch;
+      margin-bottom: 18px;
+      color: var(--charcoal-soft);
+    }
+    section p:last-child { margin-bottom: 0; }
+
+    /* What we make */
+    .offerings {
+      list-style: none;
+      display: grid;
+      gap: 28px;
+      margin-top: 36px;
+    }
+    .offerings li {
+      padding: 24px 28px;
+      background: var(--cream-soft);
+      border-left: 2px solid var(--sage);
+    }
+    .offerings h3 {
+      font-size: 22px;
+      font-weight: 500;
+      margin-bottom: 8px;
+    }
+    .offerings p {
+      font-size: 16px;
+      margin: 0;
+    }
+
+    /* CTA */
+    .cta-block {
+      background: var(--cream-soft);
+      padding: 48px 32px;
+      text-align: center;
+      margin-top: 40px;
+      border: 1px solid var(--rule);
+    }
+    .cta-block h3 {
+      font-size: 28px;
+      font-style: italic;
+      font-weight: 400;
+      margin-bottom: 14px;
+    }
+    .cta-block p {
+      max-width: 44ch;
+      margin: 0 auto 28px;
+      color: var(--charcoal-soft);
+    }
+    .button {
+      display: inline-block;
+      font-family: 'Lora', serif;
+      font-size: 15px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 14px 32px;
+      background: var(--charcoal);
+      color: var(--cream);
+      border: 1px solid var(--charcoal);
+      transition: background 200ms ease, color 200ms ease;
+    }
+    .button:hover {
+      background: var(--cream);
+      color: var(--charcoal);
+      border-bottom-color: var(--charcoal);
+    }
+
+    /* Ethics Charter */
+    .charter {
+      background: var(--sage);
+      color: var(--cream);
+      padding: 64px 0;
+      margin: 0;
+      border: none;
+    }
+    .charter .eyebrow { color: var(--cream); opacity: 0.75; }
+    .charter h2 { color: var(--cream); }
+    .charter ul {
+      list-style: none;
+      max-width: 44ch;
+      margin: 24px 0 0 0;
+    }
+    .charter li {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 22px;
+      line-height: 1.5;
+      padding: 14px 0;
+      border-bottom: 1px solid rgba(245, 240, 232, 0.25);
+      color: var(--cream);
+    }
+    .charter li:last-child { border-bottom: none; }
+
+    /* Resources */
+    .resources p { font-size: 16px; }
+    .resources ul {
+      list-style: none;
+      margin-top: 18px;
+    }
+    .resources li {
+      padding: 8px 0;
+      font-size: 16px;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--charcoal);
+      color: var(--cream);
+      padding: 64px 0 40px;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+    footer .container { max-width: 760px; }
+    footer h4 {
+      color: var(--cream);
+      font-size: 13px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-weight: 500;
+      margin-bottom: 14px;
+      opacity: 0.7;
+    }
+    footer .footer-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 48px;
+    }
+    @media (max-width: 600px) {
+      footer .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+    }
+    footer p, footer li {
+      color: rgba(245, 240, 232, 0.78);
+      font-size: 14px;
+    }
+    footer ul { list-style: none; }
+    footer li { padding: 4px 0; }
+    footer a {
+      color: var(--cream);
+      opacity: 0.85;
+      border-bottom-color: rgba(245, 240, 232, 0.3);
+    }
+    footer a:hover {
+      opacity: 1;
+      border-bottom-color: var(--cream);
+    }
+    .footer-bottom {
+      padding-top: 28px;
+      border-top: 1px solid rgba(245, 240, 232, 0.15);
+      font-size: 12px;
+      opacity: 0.6;
+      text-align: center;
+    }
+
+    /* Legal sections */
+    .legal {
+      background: var(--cream-soft);
+      padding: 72px 0;
+      border-top: 1px solid var(--rule);
+    }
+    .legal h2 {
+      font-size: 28px;
+      margin-bottom: 12px;
+    }
+    .legal h3 {
+      font-size: 18px;
+      font-weight: 500;
+      margin-top: 28px;
+      margin-bottom: 8px;
+    }
+    .legal p, .legal li {
+      font-size: 15px;
+      color: var(--charcoal-soft);
+    }
+    .legal ul {
+      margin-left: 22px;
+      margin-bottom: 14px;
+    }
+    .legal li { padding: 4px 0; }
+
+    /* Subtle entrance */
+    @media (prefers-reduced-motion: no-preference) {
+      .hero h1, .hero .tagline {
+        opacity: 0;
+        animation: fadeUp 900ms ease 200ms forwards;
+      }
+      .hero .tagline { animation-delay: 500ms; }
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(8px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="container">
+      <div class="wordmark">HeirSong</div>
+      <div class="wordmark-rule"></div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <section class="hero">
+        <h1>The companions we don't get to keep deserve a soft place to set down the love.</h1>
+        <p class="tagline">Rituals &amp; keepsakes for the moments that matter most.</p>
+      </section>
+    </div>
+
+    <div class="container">
+      <section id="what-we-make">
+        <div class="eyebrow">What we make</div>
+        <h2>Quiet, dignified digital keepsakes for pet loss</h2>
+        <p>HeirSong is an independent studio creating soft, trauma-informed templates and rituals for grieving pet parents. Everything is delivered as instant digital downloads — used the moment you need them, kept as long as you need them.</p>
+
+        <ul class="offerings">
+          <li>
+            <h3>Eulogy &amp; ceremony templates</h3>
+            <p>Fillable speech templates and at-home memorial service scripts — for the day someone asks you to speak, and the small ceremony you want to hold.</p>
+          </li>
+          <li>
+            <h3>Pet grief journals</h3>
+            <p>Trauma-informed daily prompts grounded in the work of the Association for Pet Loss and Bereavement. For the twenty-eight days no one tells you about.</p>
+          </li>
+          <li>
+            <h3>Anniversary &amp; remembrance kits</h3>
+            <p>One-month, six-month, one-year rituals. The first holiday without them. The birthday that would have been.</p>
+          </li>
+          <li>
+            <h3>Custom watercolor portraits</h3>
+            <p>Hand-styled keepsake portraits and tribute letters — the way you'll always picture them, made still. <em>Available later in 2026.</em></p>
+          </li>
+        </ul>
+
+        <div class="cta-block">
+          <h3>Begin with something free</h3>
+          <p>A Gentle 7 Days — a soft, printable companion for the first week of grief. No payment. No pressure.</p>
+          <a class="button" href="https://stan.store/heirsong" target="_blank" rel="noopener">Open the free companion</a>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <section class="charter">
+    <div class="container">
+      <div class="eyebrow">Our charter</div>
+      <h2>The promises this brand is built on</h2>
+      <ul>
+        <li>We do not use urgency tactics.</li>
+        <li>We do not retarget grief.</li>
+        <li>We do not show pet faces in ads.</li>
+      </ul>
+    </div>
+  </section>
+
+  <div class="container">
+    <section class="resources" id="resources">
+      <div class="eyebrow">If you're newly grieving</div>
+      <h2>You are not alone, and there are people to call.</h2>
+      <p>HeirSong is one small studio. These organizations are larger, free, and staffed by people trained for this. If you are in the rawest part of grief, please reach for them first.</p>
+      <ul>
+        <li><strong>APLB</strong> — Association for Pet Loss and Bereavement · <a href="https://www.aplb.org" target="_blank" rel="noopener">aplb.org</a></li>
+        <li><strong>Cornell Pet Loss Hotline</strong> — free phone support · <a href="https://www.vet.cornell.edu/hospitals/services/pet-loss-support-hotline" target="_blank" rel="noopener">vet.cornell.edu</a></li>
+        <li><strong>Lap of Love</strong> — pet hospice and grief resources · <a href="https://www.lapoflove.com" target="_blank" rel="noopener">lapoflove.com</a></li>
+      </ul>
+    </section>
+
+    <section id="contact">
+      <div class="eyebrow">Contact</div>
+      <h2>We're here, quietly.</h2>
+      <p>For questions about a download, a custom request, or anything else — <a href="mailto:hello@heirsong.fr">hello@heirsong.fr</a>. We answer within two working days, often sooner.</p>
+    </section>
+  </div>
+
+  <!-- Legal scaffolding (in-page anchors; will move to separate pages) -->
+  <section class="legal" id="mentions-legales">
+    <div class="container">
+      <div class="eyebrow">Mentions légales</div>
+      <h2>Mentions légales</h2>
+      <p>Conformément à l'article 1-1 de la loi n° 2004-575 du 21 juin 2004 pour la confiance dans l'économie numérique (LCEN), modifié par la loi n° 2024-449 du 21 mai 2024, les utilisateurs du site heirsong.fr sont informés des éléments suivants&nbsp;:</p>
+
+      <h3>Éditeur du site</h3>
+      <p>HeirSong — entreprise individuelle (auto-entrepreneur)<br />
+      Statut&nbsp;: Entrepreneur individuel — immatriculation en cours auprès de l'INPI / formalites.entreprises.gouv.fr<br />
+      Activité&nbsp;: Activités spécialisées de design (NAF 74.10Z)<br />
+      Contact&nbsp;: <a href="mailto:hello@heirsong.fr">hello@heirsong.fr</a></p>
+
+      <h3>Directeur de la publication</h3>
+      <p>[Nom complet du fondateur — à compléter]</p>
+
+      <h3>Hébergement</h3>
+      <p>OVH SAS — 2 rue Kellermann, 59100 Roubaix, France — RCS Lille Métropole 424 761 419 — Tél. +33 9 72 10 10 07 — <a href="https://www.ovh.com" target="_blank" rel="noopener">www.ovh.com</a></p>
+
+      <h3>Propriété intellectuelle</h3>
+      <p>L'ensemble des contenus présents sur ce site (textes, visuels, modèles téléchargeables) sont la propriété exclusive de HeirSong, sauf mention contraire. Toute reproduction, représentation ou rediffusion, totale ou partielle, est interdite sans autorisation écrite préalable.</p>
+    </div>
+  </section>
+
+  <section class="legal" id="cgv">
+    <div class="container">
+      <div class="eyebrow">Conditions Générales de Vente</div>
+      <h2>Conditions Générales de Vente</h2>
+      <p><em>Version provisoire — finalisation en cours.</em> Pour toute commande passée via Stan Store ou Etsy avant la publication de la version définitive, les conditions ci-dessous s'appliquent à titre indicatif et sont complétées par les conditions de la plateforme concernée.</p>
+
+      <h3>Produits</h3>
+      <p>HeirSong commercialise des produits numériques (modèles, journaux, scripts cérémoniels, kits) livrés exclusivement par téléchargement, sans support matériel. Aucun produit physique n'est expédié.</p>
+
+      <h3>Prix</h3>
+      <p>Les prix sont indiqués TTC en euros sur la plateforme de vente (Stan Store, Etsy). HeirSong relève actuellement de la franchise en base de TVA — Article 293 B du Code général des impôts. Mention&nbsp;: «&nbsp;TVA non applicable, art. 293 B du CGI&nbsp;».</p>
+
+      <h3>Droit de rétractation</h3>
+      <p>Conformément à l'article L. 221-28 13° du Code de la consommation, le droit de rétractation de 14 jours ne peut être exercé pour «&nbsp;la fourniture d'un contenu numérique sans support matériel dont l'exécution a commencé avant la fin du délai de rétractation et, si le contrat soumet le consommateur à une obligation de payer, dont l'exécution a commencé avec son accord préalable et exprès et avec la reconnaissance par lui de la perte de son droit de rétractation, lorsque le contenu numérique aura été fourni&nbsp;».</p>
+      <p>En validant votre commande, vous demandez expressément la fourniture immédiate du contenu numérique et reconnaissez perdre votre droit de rétractation de 14 jours dès le téléchargement.</p>
+
+      <h3>Garantie et réclamations</h3>
+      <p>En cas de problème technique (fichier corrompu, format inadéquat, lien de téléchargement défaillant), contactez <a href="mailto:hello@heirsong.fr">hello@heirsong.fr</a> sous 7 jours&nbsp;: nous renvoyons ou remboursons sous 48&nbsp;heures.</p>
+
+      <h3>Médiation</h3>
+      <p>Conformément à l'article L. 612-1 du Code de la consommation, un médiateur de la consommation sera désigné dès l'immatriculation de l'entreprise.</p>
+
+      <h3>Droit applicable</h3>
+      <p>Les présentes CGV sont soumises au droit français. Tout litige relèvera de la compétence des tribunaux français, sous réserve de l'application des règles de protection du consommateur.</p>
+    </div>
+  </section>
+
+  <section class="legal" id="confidentialite">
+    <div class="container">
+      <div class="eyebrow">Politique de confidentialité</div>
+      <h2>Politique de confidentialité</h2>
+      <p><em>Version provisoire — finalisation en cours.</em> Cette politique sera mise à jour avec les références complètes au registre des activités de traitement (CNIL) dès l'immatriculation de l'entreprise.</p>
+
+      <h3>Responsable du traitement</h3>
+      <p>HeirSong — entreprise individuelle (immatriculation en cours) — <a href="mailto:hello@heirsong.fr">hello@heirsong.fr</a></p>
+
+      <h3>Données collectées</h3>
+      <ul>
+        <li><strong>Adresse e-mail</strong> — pour l'envoi du compagnon gratuit «&nbsp;A Gentle 7 Days&nbsp;» et des e-mails de bienvenue, sur la base du consentement (RGPD art. 6.1.a)</li>
+        <li><strong>Prénom de l'animal et mois du décès</strong> (facultatifs) — utilisés uniquement pour personnaliser les e-mails d'anniversaire de remembrance, sur la base du consentement explicite et granulaire</li>
+        <li><strong>Données de commande</strong> (nom, e-mail, historique d'achat) — traitées par Stan Store et Etsy en tant que sous-traitants, pour l'exécution du contrat (RGPD art. 6.1.b)</li>
+      </ul>
+
+      <h3>Conservation</h3>
+      <p>Les données de la liste e-mail sont conservées tant que vous restez abonné. Vous pouvez vous désabonner à tout moment via le lien présent dans chaque e-mail. Les données de commande sont conservées conformément aux obligations légales comptables (10 ans).</p>
+
+      <h3>Sous-traitants</h3>
+      <ul>
+        <li>Brevo (Sendinblue SAS, France) — envoi d'e-mails — serveurs UE — ISO 27001</li>
+        <li>Stan Store (Stan, États-Unis) — hébergement de la page de capture — transfert encadré par les clauses contractuelles types</li>
+        <li>Etsy Ireland UC — plateforme de vente — RGPD applicable</li>
+        <li>OVH SAS — hébergement du site — France</li>
+      </ul>
+
+      <h3>Vos droits</h3>
+      <p>Conformément aux articles 15 à 22 du RGPD, vous disposez d'un droit d'accès, de rectification, d'effacement, de limitation, d'opposition et de portabilité. Pour exercer ces droits&nbsp;: <a href="mailto:hello@heirsong.fr">hello@heirsong.fr</a>.</p>
+      <p>Vous avez également le droit d'introduire une réclamation auprès de la CNIL — <a href="https://www.cnil.fr" target="_blank" rel="noopener">cnil.fr</a>.</p>
+
+      <h3>Cookies</h3>
+      <p>Le site heirsong.fr n'utilise actuellement aucun cookie de mesure d'audience ni de traceur publicitaire. Seuls les cookies strictement nécessaires au fonctionnement du site sont susceptibles d'être déposés.</p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h4>HeirSong</h4>
+          <p>Rituals &amp; keepsakes for the moments that matter most.</p>
+          <p style="margin-top: 14px;"><a href="mailto:hello@heirsong.fr">hello@heirsong.fr</a></p>
+        </div>
+        <div>
+          <h4>Informations légales</h4>
+          <ul>
+            <li><a href="#mentions-legales">Mentions légales</a></li>
+            <li><a href="#cgv">Conditions Générales de Vente</a></li>
+            <li><a href="#confidentialite">Politique de confidentialité</a></li>
+            <li><a href="#resources">Resources for grief</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        © 2026 HeirSong · Entrepreneur individuel · Site édité depuis la France
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
