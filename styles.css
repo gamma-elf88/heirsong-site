@@ -582,6 +582,70 @@ section p:last-child { margin-bottom: 0; }
   line-height: 1.65 !important;
 }
 
+/* ============================================
+   Notify modal (Studio pages)
+   ============================================ */
+
+.notify-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+.notify-modal[hidden] { display: none; }
+.notify-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(58, 58, 58, 0.55);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+}
+.notify-modal-card {
+  position: relative;
+  background: var(--cream);
+  max-width: 480px;
+  width: 100%;
+  padding: 48px 40px 40px;
+  border: 1px solid var(--rule);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  max-height: 90vh;
+  overflow-y: auto;
+}
+.notify-close {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  background: none;
+  border: none;
+  font-size: 28px;
+  color: var(--charcoal-soft);
+  cursor: pointer;
+  line-height: 1;
+  padding: 4px 8px;
+  transition: color 200ms ease;
+}
+.notify-close:hover { color: var(--terracotta); }
+.notify-modal-card h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 28px;
+  font-style: italic;
+  font-weight: 400;
+  margin-bottom: 12px;
+  text-align: center;
+}
+.notify-modal-card > p {
+  font-size: 15px;
+  color: var(--charcoal-soft);
+  text-align: center;
+  margin-bottom: 28px;
+  max-width: 36ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /* Page intro (used on About, Studio, Resources, Contact) */
 .page-intro {
   padding: 80px 0 48px;
