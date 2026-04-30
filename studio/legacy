@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Legacy — HeirSong</title>
+  <meta name="description" content="HeirSong's Legacy collection: letters from one generation to the next, living tributes, milestone keepsakes. The work we want to leave behind. In development." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+
+<body>
+
+  <header class="site-header">
+    <div class="container-wide">
+      <a href="/" class="wordmark">HeirSong</a>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Open menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <line x1="3" y1="7" x2="21" y2="7" />
+          <line x1="3" y1="12" x2="21" y2="12" />
+          <line x1="3" y1="17" x2="21" y2="17" />
+        </svg>
+      </button>
+      <nav class="site-nav" id="site-nav">
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/studio" class="active">Studio</a>
+        <a href="/resources">Resources</a>
+        <a href="/contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <section class="page-intro">
+        <div class="eyebrow" style="margin-bottom: 12px;">The Studio · Legacy</div>
+        <h1>The words we want to leave behind.</h1>
+        <p>Letters from one generation to the next. Living tributes. The pieces we make while there's still time.</p>
+      </section>
+    </div>
+
+    <div class="container">
+      <section>
+        <p>HeirSong's Legacy collection is for the work that doesn't begin with a death. It begins, instead, with the recognition that we have something we want to pass on — a story, a sentence, a way we want to be remembered, a few honest paragraphs to a person not yet born.</p>
+        <p>This is the most distant horizon in our studio. The pieces below are in active development and won't be available until later this year, at the earliest. They're listed here because the brand's full ambition is on the table, not hidden — and because we believe legacy work and grief work are quietly the same craft.</p>
+      </section>
+    </div>
+
+    <div class="container">
+      <section>
+        <div class="eyebrow">In our studio</div>
+
+        <div class="studio-item">
+          <div>
+            <div class="item-status dev">In our studio</div>
+            <h3>Legacy Letters</h3>
+            <p>A small, ghostwritten package: three to five carefully composed letters, written from your memories and your voice, to be opened by the people you love at moments you choose. For graduations. For weddings. For the day after.</p>
+          </div>
+          <button class="item-cta js-notify-btn" data-source="legacy — Legacy Letters">Tell me when it's ready</button>
+        </div>
+
+        <div class="studio-item">
+          <div>
+            <div class="item-status dev">In our studio</div>
+            <h3>Living Tribute</h3>
+            <p>A keepsake made for someone still here — a portrait, a printed compilation of letters from people who love them, a small ritual book of the moments others wanted to mark. Often given to those navigating illness, retirement, or the quieter milestones.</p>
+          </div>
+          <button class="item-cta js-notify-btn" data-source="legacy — Living Tribute">Tell me when it's ready</button>
+        </div>
+
+        <div class="studio-item">
+          <div>
+            <div class="item-status dev">In our studio</div>
+            <h3>Milestone Ritual Pack</h3>
+            <p>Small ceremonies for the transitions that don't always get marked — leaving a home, retiring from a long career, becoming a grandparent, becoming the eldest in a family. Scripts, candle rituals, blessing cards.</p>
+          </div>
+          <button class="item-cta js-notify-btn" data-source="legacy — Milestone Ritual">Tell me when it's ready</button>
+        </div>
+      </section>
+    </div>
+
+    <div class="container">
+      <section>
+        <p style="font-style: italic; color: var(--charcoal-soft); max-width: 50ch; margin: 0 auto; text-align: center;">If you're working on a private legacy project — a letter for a child, a tribute for someone still living, a piece you're not sure how to begin — please write to us at <a href="mailto:hello@heirsong.fr">hello@heirsong.fr</a>. Some of our most considered work has begun this way.</p>
+      </section>
+    </div>
+  </main>
+
+  <section class="charter">
+    <div class="container">
+      <div class="eyebrow">Our charter</div>
+      <h2>The promises this brand is built on</h2>
+      <ul>
+        <li>We do not use urgency tactics.</li>
+        <li>We do not retarget grief.</li>
+        <li>We do not show pet or human faces in ads.</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container-wide">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/" class="wordmark">HeirSong</a>
+          <p>Rituals &amp; keepsakes for the moments that matter most.</p>
+        </div>
+        <div>
+          <h4>The studio</h4>
+          <ul>
+            <li><a href="/studio/pet">Pet collection</a></li>
+            <li><a href="/studio/family">Family &amp; Memorial</a></li>
+            <li><a href="/studio/legacy">Legacy</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Information</h4>
+          <ul>
+            <li><a href="/about">About HeirSong</a></li>
+            <li><a href="/resources">Grief resources</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <li><a href="/legal">Mentions légales</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Reach us</h4>
+          <ul>
+            <li><a href="mailto:hello@heirsong.fr">hello@heirsong.fr</a></li>
+            <li>Replies within two working days, often sooner.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        © 2026 HeirSong · Jinmyong Ri, entrepreneur individuel · Site édité depuis la France
+      </div>
+    </div>
+  </footer>
+
+  <div class="notify-modal" id="notify-modal" role="dialog" aria-modal="true" aria-labelledby="notify-title" hidden>
+    <div class="notify-modal-backdrop" id="notify-backdrop"></div>
+    <div class="notify-modal-card">
+      <button class="notify-close" id="notify-close" aria-label="Close">×</button>
+      <h3 id="notify-title">We'll let you know.</h3>
+      <p>Leave your email and we'll send a single, quiet message when this piece is ready. Nothing else, unless you ask for it.</p>
+      <form class="signup-form" id="notify-form" novalidate>
+        <div class="form-row">
+          <input type="email" name="email" id="notify-email" placeholder="Your email address" required autocomplete="email" />
+          <div class="consent-row">
+            <input type="checkbox" id="notify-consent" required />
+            <label for="notify-consent">Yes, please email me when this is ready and welcome me to the HeirSong list. I can unsubscribe anytime.</label>
+          </div>
+          <button type="submit" id="notify-submit">Notify me</button>
+        </div>
+        <div class="form-message" id="notify-message" role="status" aria-live="polite"></div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    (function() {
+      const toggle = document.getElementById('menu-toggle');
+      const nav = document.getElementById('site-nav');
+      if (toggle && nav) {
+        toggle.addEventListener('click', function() {
+          nav.classList.toggle('open');
+        });
+      }
+    })();
+
+    (function() {
+      const modal = document.getElementById('notify-modal');
+      const backdrop = document.getElementById('notify-backdrop');
+      const closeBtn = document.getElementById('notify-close');
+      const form = document.getElementById('notify-form');
+      const emailInput = document.getElementById('notify-email');
+      const consentInput = document.getElementById('notify-consent');
+      const submitBtn = document.getElementById('notify-submit');
+      const message = document.getElementById('notify-message');
+      let currentSource = '';
+
+      document.querySelectorAll('.js-notify-btn').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          currentSource = btn.dataset.source || 'studio — unknown';
+          modal.hidden = false;
+          document.body.style.overflow = 'hidden';
+          setTimeout(function() { emailInput.focus(); }, 50);
+        });
+      });
+
+      function closeModal() {
+        modal.hidden = true;
+        document.body.style.overflow = '';
+        message.style.display = 'none';
+        message.className = 'form-message';
+        form.reset();
+      }
+
+      backdrop.addEventListener('click', closeModal);
+      closeBtn.addEventListener('click', closeModal);
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && !modal.hidden) closeModal();
+      });
+
+      form.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const email = emailInput.value.trim();
+        if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+          showMessage('Please enter a valid email address.', 'error');
+          return;
+        }
+        if (!consentInput.checked) {
+          showMessage('Please confirm you would like to be emailed.', 'error');
+          return;
+        }
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending...';
+        message.style.display = 'none';
+        try {
+          const response = await fetch('/api/subscribe', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email, source: currentSource }),
+          });
+          const data = await response.json();
+          if (response.ok && data.success) {
+            showMessage("We've got it. We'll write quietly when it's ready.", 'success');
+            setTimeout(closeModal, 2400);
+          } else {
+            showMessage(data.error || 'Something went wrong. Please try again.', 'error');
+          }
+        } catch (err) {
+          showMessage('Could not reach our servers. Please try again in a moment.', 'error');
+        } finally {
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Notify me';
+        }
+      });
+
+      function showMessage(text, type) {
+        message.textContent = text;
+        message.className = 'form-message ' + type;
+        message.style.display = 'block';
+      }
+    })();
+  </script>
+
+</body>
+</html>
