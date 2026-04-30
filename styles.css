@@ -543,6 +543,45 @@ section p:last-child { margin-bottom: 0; }
   line-height: 1.5;
 }
 
+/* Collapsible phrase reveal (About page) */
+.phrase-reveal {
+  margin: 18px 0 28px;
+  padding: 16px 20px;
+  background: var(--cream-soft);
+  border-left: 2px solid var(--sage);
+}
+.phrase-reveal summary {
+  cursor: pointer;
+  list-style: none;
+  font-family: 'Lora', serif;
+  font-size: 14px;
+  letter-spacing: 0.06em;
+  color: var(--charcoal);
+  padding: 4px 0;
+  transition: color 200ms ease;
+}
+.phrase-reveal summary::-webkit-details-marker { display: none; }
+.phrase-reveal summary::after {
+  content: ' →';
+  color: var(--terracotta);
+  transition: transform 200ms ease;
+  display: inline-block;
+}
+.phrase-reveal[open] summary::after {
+  content: ' ↓';
+}
+.phrase-reveal summary:hover { color: var(--terracotta); }
+.phrase-reveal-body {
+  padding-top: 14px;
+}
+.phrase-reveal-body ul {
+  margin: 0 0 0 22px !important;
+}
+.phrase-reveal-body li {
+  font-size: 15px !important;
+  line-height: 1.65 !important;
+}
+
 /* Page intro (used on About, Studio, Resources, Contact) */
 .page-intro {
   padding: 80px 0 48px;
