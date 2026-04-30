@@ -92,15 +92,9 @@
             <div class="form-row">
               <input type="email" name="email" id="email" placeholder="Your email address" required autocomplete="email" />
 
-              <div class="optional-label">Optional — for gentle anniversary remembrance</div>
-              <div class="field-row">
-                <input type="text" name="petName" id="petName" placeholder="Their name" autocomplete="off" />
-                <input type="month" name="dateOfLoss" id="dateOfLoss" />
-              </div>
-
               <div class="consent-row">
                 <input type="checkbox" id="consent" name="consent" required />
-                <label for="consent">Yes, I'd like to receive <em>A Gentle 7 Days</em> and HeirSong's gentle remembrance emails (one short welcome series, plus quiet anniversary reminders if I shared a date). I can unsubscribe in one click anytime.</label>
+                <label for="consent">Yes, I'd like to receive <em>A Gentle 7 Days</em> and HeirSong's gentle remembrance emails. I can unsubscribe in one click anytime.</label>
               </div>
 
               <button type="submit" id="submit-btn">Send me the journal</button>
@@ -196,8 +190,6 @@
         e.preventDefault();
 
         const email = document.getElementById('email').value.trim();
-        const petName = document.getElementById('petName').value.trim();
-        const dateOfLoss = document.getElementById('dateOfLoss').value;
         const consent = document.getElementById('consent').checked;
 
         if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
@@ -218,7 +210,7 @@
           const response = await fetch('/api/subscribe', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ email, petName, dateOfLoss, source: 'home — A Gentle 7 Days' }),
+            body: JSON.stringify({ email, source: 'home — A Gentle 7 Days' }),
           });
 
           const data = await response.json();
