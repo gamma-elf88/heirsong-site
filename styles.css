@@ -714,6 +714,98 @@ section p:last-child { margin-bottom: 0; }
   max-width: none;
 }
 
+/* ============================================
+   Eucalyptus motif — hero glyph + section dividers
+   ============================================ */
+
+.eucalyptus {
+  display: block;
+  margin: 0 auto;
+}
+.eucalyptus path,
+.eucalyptus ellipse,
+.eucalyptus circle {
+  fill: none;
+  stroke: var(--sage-deep);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Hero version — larger, visible */
+.eucalyptus.hero-glyph {
+  width: 96px;
+  height: auto;
+  margin-top: 36px;
+  opacity: 0.85;
+}
+
+/* Filled leaves on hero version */
+.eucalyptus.hero-glyph .leaf-fill {
+  fill: var(--sage);
+  fill-opacity: 0.18;
+  stroke: var(--sage-deep);
+  stroke-width: 1.2;
+}
+.eucalyptus.hero-glyph .stem {
+  stroke: var(--sage-deep);
+  stroke-width: 1.4;
+  fill: none;
+}
+
+/* Smaller divider version */
+.eucalyptus.divider-glyph {
+  width: 56px;
+  height: auto;
+  opacity: 0.55;
+}
+.eucalyptus.divider-glyph .leaf-fill {
+  fill: var(--sage);
+  fill-opacity: 0.25;
+  stroke: var(--sage-deep);
+  stroke-width: 1.1;
+}
+.eucalyptus.divider-glyph .stem {
+  stroke: var(--sage-deep);
+  stroke-width: 1.2;
+  fill: none;
+}
+
+/* Section divider wrapper */
+.section-divider {
+  text-align: center;
+  padding: 8px 0;
+  margin: 0;
+}
+
+/* Override the default section border-top — replaced by the eucalyptus divider */
+section.no-rule {
+  border-top: none;
+}
+
+/* Hero glyph draw-in animation */
+@media (prefers-reduced-motion: no-preference) {
+  .eucalyptus.hero-glyph .stem,
+  .eucalyptus.hero-glyph .leaf-fill {
+    stroke-dasharray: 400;
+    stroke-dashoffset: 400;
+    fill-opacity: 0;
+    animation: drawIn 1600ms ease-out 900ms forwards;
+  }
+  .eucalyptus.hero-glyph .leaf-fill {
+    animation: drawIn 1600ms ease-out 900ms forwards, fillFade 800ms ease-out 1800ms forwards;
+  }
+}
+
+@keyframes drawIn {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes fillFade {
+  from { fill-opacity: 0; }
+  to { fill-opacity: 0.18; }
+}
+
 /* Page intro (used on About, Studio, Resources, Contact) */
 .page-intro {
   padding: 80px 0 48px;
