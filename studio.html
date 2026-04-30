@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Studio — HeirSong</title>
+  <meta name="description" content="HeirSong is a small studio making three quiet collections — for pet loss, for family memorial, and for legacy. Each piece designed slowly, made with care." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+
+<body>
+
+  <header class="site-header">
+    <div class="container-wide">
+      <a href="/" class="wordmark">HeirSong</a>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Open menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <line x1="3" y1="7" x2="21" y2="7" />
+          <line x1="3" y1="12" x2="21" y2="12" />
+          <line x1="3" y1="17" x2="21" y2="17" />
+        </svg>
+      </button>
+      <nav class="site-nav" id="site-nav">
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/studio" class="active">Studio</a>
+        <a href="/resources">Resources</a>
+        <a href="/contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <section class="page-intro">
+        <h1>The Studio</h1>
+        <p>Three quiet collections, made slowly, made with care.</p>
+      </section>
+    </div>
+
+    <div class="container">
+      <section>
+        <p>HeirSong is a small studio. Each piece — printable templates, ceremony scripts, anniversary kits, tribute keepsakes — is designed to hold the weight of a difficult moment without rushing it. Most arrive as instant downloads. Some are made to order. Nothing is mass-produced or templated for volume.</p>
+
+        <p>The catalogue is organized into three collections. Some pieces are available today. Others are opening in the coming weeks. A few are still being designed, with care, in our studio.</p>
+
+        <div class="collection-grid" style="margin-top: 48px;">
+          <a href="/studio/pet" class="collection-card">
+            <div class="card-status">Available now</div>
+            <h3>Pet</h3>
+            <p>Eulogy templates, ceremony scripts, anniversary kits, and tribute keepsakes for the companions we don't get to keep.</p>
+            <div class="card-arrow">Explore the Pet collection →</div>
+          </a>
+          <a href="/studio/family" class="collection-card">
+            <div class="card-status coming">Opening soon</div>
+            <h3>Family &amp; Memorial</h3>
+            <p>Restored photographs, tribute songs, and remembrance kits for the people whose absence reshapes a family.</p>
+            <div class="card-arrow">See what's coming →</div>
+          </a>
+          <a href="/studio/legacy" class="collection-card">
+            <div class="card-status dev">In development</div>
+            <h3>Legacy</h3>
+            <p>Letters from one generation to the next. Living tributes, milestone keepsakes, and the words we want to leave behind.</p>
+            <div class="card-arrow">Glimpse the work in progress →</div>
+          </a>
+        </div>
+      </section>
+    </div>
+
+    <div class="container">
+      <section id="custom-commissions">
+        <div class="eyebrow">Custom commissions</div>
+        <h2>For the piece we haven't made yet.</h2>
+        <p>Sometimes the right keepsake is one nobody has made. If you're holding a moment that doesn't quite fit any of the items below — a service for a friend, a tribute in a language we haven't translated, a particular kind of letter you'd like help writing — please write to us at <a href="mailto:hello@heirsong.fr">hello@heirsong.fr</a>. We take on a small number of custom commissions each month.</p>
+      </section>
+    </div>
+  </main>
+
+  <section class="charter">
+    <div class="container">
+      <div class="eyebrow">Our charter</div>
+      <h2>The promises this brand is built on</h2>
+      <ul>
+        <li>We do not use urgency tactics.</li>
+        <li>We do not retarget grief.</li>
+        <li>We do not show pet or human faces in ads.</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container-wide">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/" class="wordmark">HeirSong</a>
+          <p>Rituals &amp; keepsakes for the moments that matter most.</p>
+        </div>
+        <div>
+          <h4>The studio</h4>
+          <ul>
+            <li><a href="/studio/pet">Pet collection</a></li>
+            <li><a href="/studio/family">Family &amp; Memorial</a></li>
+            <li><a href="/studio/legacy">Legacy</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Information</h4>
+          <ul>
+            <li><a href="/about">About HeirSong</a></li>
+            <li><a href="/resources">Grief resources</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <li><a href="/legal">Mentions légales</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Reach us</h4>
+          <ul>
+            <li><a href="mailto:hello@heirsong.fr">hello@heirsong.fr</a></li>
+            <li>Replies within two working days, often sooner.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        © 2026 HeirSong · Jinmyong Ri, entrepreneur individuel · Site édité depuis la France
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function() {
+      const toggle = document.getElementById('menu-toggle');
+      const nav = document.getElementById('site-nav');
+      if (toggle && nav) {
+        toggle.addEventListener('click', function() {
+          nav.classList.toggle('open');
+        });
+      }
+    })();
+  </script>
+
+</body>
+</html>
