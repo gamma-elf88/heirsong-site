@@ -4,484 +4,89 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>HeirSong — Rituals &amp; keepsakes for the moments that matter most</title>
-  <meta name="description" content="HeirSong makes soft, dignified pet memorial templates, ceremony scripts, grief journals and tribute keepsakes — for the day after, the first month, and every anniversary that follows." />
+  <meta name="description" content="HeirSong is a quiet studio making soft, dignified keepsakes and rituals for pet loss, family memorial, and legacy moments. Trauma-informed, never saccharine." />
 
-  <!-- Open Graph -->
   <meta property="og:title" content="HeirSong" />
   <meta property="og:description" content="Rituals & keepsakes for the moments that matter most." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://heirsong.fr" />
-  <meta property="og:locale" content="en_US" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
 
-  <style>
-    :root {
-      --sage: #A8B5A0;
-      --terracotta: #C9907E;
-      --cream: #F5F0E8;
-      --cream-soft: #FBF8F2;
-      --charcoal: #3A3A3A;
-      --charcoal-soft: #5A5A5A;
-      --rule: #E4DDD0;
-    }
-
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      font-family: 'Lora', Georgia, serif;
-      font-weight: 400;
-      font-size: 17px;
-      line-height: 1.7;
-      color: var(--charcoal);
-      background: var(--cream);
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
-
-    h1, h2, h3, h4 {
-      font-family: 'Cormorant Garamond', 'Garamond', serif;
-      font-weight: 500;
-      letter-spacing: 0.005em;
-      color: var(--charcoal);
-    }
-
-    a {
-      color: var(--terracotta);
-      text-decoration: none;
-      border-bottom: 1px solid transparent;
-      transition: border-color 200ms ease, color 200ms ease;
-    }
-    a:hover { border-color: var(--terracotta); }
-
-    .container {
-      max-width: 720px;
-      margin: 0 auto;
-      padding: 0 28px;
-    }
-
-    /* Header */
-    header {
-      padding: 56px 0 0 0;
-      text-align: center;
-    }
-    .wordmark {
-      font-family: 'Cormorant Garamond', serif;
-      font-weight: 500;
-      font-size: 28px;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--charcoal);
-    }
-    .wordmark-rule {
-      width: 36px;
-      height: 1px;
-      background: var(--terracotta);
-      margin: 18px auto 0;
-    }
-
-    /* Hero */
-    .hero {
-      padding: 88px 0 72px;
-      text-align: center;
-    }
-    .hero h1 {
-      font-size: clamp(34px, 6vw, 52px);
-      line-height: 1.18;
-      font-style: italic;
-      font-weight: 400;
-      max-width: 16ch;
-      margin: 0 auto 28px;
-    }
-    .hero .tagline {
-      font-family: 'Lora', serif;
-      font-style: italic;
-      color: var(--charcoal-soft);
-      font-size: 19px;
-      max-width: 32ch;
-      margin: 0 auto;
-    }
-
-    /* Sections */
-    section {
-      padding: 64px 0;
-      border-top: 1px solid var(--rule);
-    }
-    section:first-of-type { border-top: none; }
-
-    .eyebrow {
-      font-family: 'Lora', serif;
-      font-size: 12px;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--sage);
-      margin-bottom: 18px;
-      font-weight: 500;
-    }
-    section h2 {
-      font-size: clamp(28px, 4vw, 36px);
-      font-weight: 500;
-      margin-bottom: 24px;
-      line-height: 1.25;
-    }
-    section p {
-      max-width: 60ch;
-      margin-bottom: 18px;
-      color: var(--charcoal-soft);
-    }
-    section p:last-child { margin-bottom: 0; }
-
-    /* What we make */
-    .offerings {
-      list-style: none;
-      display: grid;
-      gap: 28px;
-      margin-top: 36px;
-    }
-    .offerings li {
-      padding: 24px 28px;
-      background: var(--cream-soft);
-      border-left: 2px solid var(--sage);
-    }
-    .offerings h3 {
-      font-size: 22px;
-      font-weight: 500;
-      margin-bottom: 8px;
-    }
-    .offerings p {
-      font-size: 16px;
-      margin: 0;
-    }
-
-    /* CTA */
-    .cta-block {
-      background: var(--cream-soft);
-      padding: 48px 32px;
-      text-align: center;
-      margin-top: 40px;
-      border: 1px solid var(--rule);
-    }
-    .cta-block h3 {
-      font-size: 28px;
-      font-style: italic;
-      font-weight: 400;
-      margin-bottom: 14px;
-    }
-    .cta-block p {
-      max-width: 44ch;
-      margin: 0 auto 28px;
-      color: var(--charcoal-soft);
-    }
-    .button {
-      display: inline-block;
-      font-family: 'Lora', serif;
-      font-size: 15px;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      padding: 14px 32px;
-      background: var(--charcoal);
-      color: var(--cream);
-      border: 1px solid var(--charcoal);
-      transition: background 200ms ease, color 200ms ease;
-    }
-    .button:hover {
-      background: var(--cream);
-      color: var(--charcoal);
-      border-bottom-color: var(--charcoal);
-    }
-
-    /* Signup form */
-    .signup-form {
-      max-width: 420px;
-      margin: 0 auto;
-    }
-    .signup-form .form-row {
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-    }
-    .signup-form input[type="email"],
-    .signup-form input[type="text"],
-    .signup-form input[type="month"] {
-      font-family: 'Lora', serif;
-      font-size: 16px;
-      padding: 14px 16px;
-      background: var(--cream);
-      border: 1px solid var(--rule);
-      color: var(--charcoal);
-      width: 100%;
-    }
-    .signup-form input:focus {
-      outline: none;
-      border-color: var(--sage);
-    }
-    .signup-form .field-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-    }
-    @media (max-width: 480px) {
-      .signup-form .field-row { grid-template-columns: 1fr; }
-    }
-    .signup-form .optional-label {
-      font-size: 12px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--charcoal-soft);
-      margin-top: 8px;
-      margin-bottom: 4px;
-      text-align: center;
-      font-style: italic;
-    }
-    .signup-form button {
-      font-family: 'Lora', serif;
-      font-size: 15px;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      padding: 14px 32px;
-      background: var(--charcoal);
-      color: var(--cream);
-      border: 1px solid var(--charcoal);
-      cursor: pointer;
-      transition: background 200ms ease, color 200ms ease;
-      width: 100%;
-    }
-    .signup-form button:hover:not(:disabled) {
-      background: var(--terracotta);
-      border-color: var(--terracotta);
-    }
-    .signup-form button:disabled {
-      opacity: 0.5;
-      cursor: not-allowed;
-    }
-    .form-message {
-      margin-top: 18px;
-      padding: 14px 18px;
-      font-size: 14px;
-      text-align: center;
-      display: none;
-    }
-    .form-message.success {
-      background: var(--sage);
-      color: var(--cream);
-      display: block;
-    }
-    .form-message.error {
-      background: var(--terracotta);
-      color: var(--cream);
-      display: block;
-    }
-    .consent-note {
-      font-size: 12px;
-      color: var(--charcoal-soft);
-      text-align: center;
-      margin-top: 14px;
-      line-height: 1.5;
-    }
-
-    /* Ethics Charter */
-    .charter {
-      background: var(--sage);
-      color: var(--cream);
-      padding: 64px 0;
-      margin: 0;
-      border: none;
-    }
-    .charter .eyebrow { color: var(--cream); opacity: 0.75; }
-    .charter h2 { color: var(--cream); }
-    .charter ul {
-      list-style: none;
-      max-width: 44ch;
-      margin: 24px 0 0 0;
-    }
-    .charter li {
-      font-family: 'Cormorant Garamond', serif;
-      font-style: italic;
-      font-size: 22px;
-      line-height: 1.5;
-      padding: 14px 0;
-      border-bottom: 1px solid rgba(245, 240, 232, 0.25);
-      color: var(--cream);
-    }
-    .charter li:last-child { border-bottom: none; }
-
-    /* Resources */
-    .resources p { font-size: 16px; }
-    .resources ul {
-      list-style: none;
-      margin-top: 18px;
-    }
-    .resources li {
-      padding: 8px 0;
-      font-size: 16px;
-    }
-
-    /* Footer */
-    footer {
-      background: var(--charcoal);
-      color: var(--cream);
-      padding: 64px 0 40px;
-      font-size: 14px;
-      line-height: 1.7;
-    }
-    footer .container { max-width: 760px; }
-    footer h4 {
-      color: var(--cream);
-      font-size: 13px;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      font-weight: 500;
-      margin-bottom: 14px;
-      opacity: 0.7;
-    }
-    footer .footer-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 48px;
-      margin-bottom: 48px;
-    }
-    @media (max-width: 600px) {
-      footer .footer-grid { grid-template-columns: 1fr; gap: 32px; }
-    }
-    footer p, footer li {
-      color: rgba(245, 240, 232, 0.78);
-      font-size: 14px;
-    }
-    footer ul { list-style: none; }
-    footer li { padding: 4px 0; }
-    footer a {
-      color: var(--cream);
-      opacity: 0.85;
-      border-bottom-color: rgba(245, 240, 232, 0.3);
-    }
-    footer a:hover {
-      opacity: 1;
-      border-bottom-color: var(--cream);
-    }
-    .footer-bottom {
-      padding-top: 28px;
-      border-top: 1px solid rgba(245, 240, 232, 0.15);
-      font-size: 12px;
-      opacity: 0.6;
-      text-align: center;
-    }
-
-    /* Legal sections — collapsed by default, minimal real estate */
-    .legal-wrap {
-      background: var(--cream-soft);
-      padding: 32px 0 16px;
-      border-top: 1px solid var(--rule);
-    }
-    .legal-wrap details {
-      max-width: 720px;
-      margin: 0 auto;
-      padding: 14px 28px;
-      border-bottom: 1px solid var(--rule);
-    }
-    .legal-wrap details:last-child { border-bottom: none; }
-    .legal-wrap summary {
-      cursor: pointer;
-      font-family: 'Lora', serif;
-      font-size: 13px;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--charcoal-soft);
-      list-style: none;
-      padding: 6px 0;
-      transition: color 200ms ease;
-    }
-    .legal-wrap summary::-webkit-details-marker { display: none; }
-    .legal-wrap summary::after {
-      content: '+';
-      float: right;
-      font-size: 16px;
-      color: var(--terracotta);
-    }
-    .legal-wrap details[open] summary::after { content: '−'; }
-    .legal-wrap summary:hover { color: var(--charcoal); }
-    .legal-wrap .legal-body {
-      padding: 16px 0 8px;
-      font-size: 13px;
-      line-height: 1.65;
-      color: var(--charcoal-soft);
-    }
-    .legal-wrap .legal-body h3 {
-      font-family: 'Lora', serif;
-      font-size: 13px;
-      font-weight: 500;
-      color: var(--charcoal);
-      margin-top: 14px;
-      margin-bottom: 4px;
-    }
-    .legal-wrap .legal-body h3:first-child { margin-top: 0; }
-    .legal-wrap .legal-body p { margin-bottom: 8px; }
-    .legal-wrap .legal-body ul { margin: 6px 0 8px 18px; }
-    .legal-wrap .legal-body li { padding: 2px 0; }
-
-    /* Subtle entrance */
-    @media (prefers-reduced-motion: no-preference) {
-      .hero h1, .hero .tagline {
-        opacity: 0;
-        animation: fadeUp 900ms ease 200ms forwards;
-      }
-      .hero .tagline { animation-delay: 500ms; }
-    }
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(8px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-  </style>
+  <link rel="stylesheet" href="/styles.css" />
 </head>
 
 <body>
 
-  <header>
-    <div class="container">
-      <div class="wordmark">HeirSong</div>
-      <div class="wordmark-rule"></div>
+  <header class="site-header">
+    <div class="container-wide">
+      <a href="/" class="wordmark">HeirSong</a>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Open menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <line x1="3" y1="7" x2="21" y2="7" />
+          <line x1="3" y1="12" x2="21" y2="12" />
+          <line x1="3" y1="17" x2="21" y2="17" />
+        </svg>
+      </button>
+      <nav class="site-nav" id="site-nav">
+        <a href="/" class="active">Home</a>
+        <a href="/about">About</a>
+        <a href="/studio">Studio</a>
+        <a href="/resources">Resources</a>
+        <a href="/contact">Contact</a>
+      </nav>
     </div>
   </header>
 
   <main>
     <div class="container">
       <section class="hero">
-        <h1>The companions we don't get to keep deserve a soft place to set down the love.</h1>
+        <h1>The companions and people we don't get to keep deserve a soft place to set down the love.</h1>
         <p class="tagline">Rituals &amp; keepsakes for the moments that matter most.</p>
+        <div class="horizon-cue">
+          <span>Pet</span>
+          <span>Family</span>
+          <span>Legacy</span>
+        </div>
       </section>
     </div>
 
     <div class="container">
-      <section id="what-we-make">
-        <div class="eyebrow">What we make</div>
-        <h2>Quiet, dignified digital keepsakes for pet loss</h2>
-        <p>HeirSong is an independent studio creating soft, trauma-informed templates and rituals for grieving pet parents. Everything is delivered as instant digital downloads — used the moment you need them, kept as long as you need them.</p>
+      <section id="studio-teaser">
+        <div class="eyebrow">The studio</div>
+        <h2>Three collections, made slowly, made with care</h2>
+        <p>HeirSong is a small independent studio. We make printable templates, tribute keepsakes, and ritual kits — designed to hold the weight of difficult moments without ever rushing them.</p>
 
-        <ul class="offerings">
-          <li>
-            <h3>Eulogy &amp; ceremony templates</h3>
-            <p>Fillable speech templates and at-home memorial service scripts — for the day someone asks you to speak, and the small ceremony you want to hold.</p>
-          </li>
-          <li>
-            <h3>Pet grief journals</h3>
-            <p>Trauma-informed daily prompts grounded in the work of the Association for Pet Loss and Bereavement. For the twenty-eight days no one tells you about.</p>
-          </li>
-          <li>
-            <h3>Anniversary &amp; remembrance kits</h3>
-            <p>One-month, six-month, one-year rituals. The first holiday without them. The birthday that would have been.</p>
-          </li>
-          <li>
-            <h3>Custom watercolor portraits</h3>
-            <p>Hand-styled keepsake portraits and tribute letters — the way you'll always picture them, made still. <em>Available later in 2026.</em></p>
-          </li>
-        </ul>
+        <div class="collection-grid">
+          <a href="/studio/pet" class="collection-card">
+            <div class="card-status">Available now</div>
+            <h3>Pet</h3>
+            <p>Eulogy templates, ceremony scripts, anniversary kits, and tribute keepsakes for the companions we don't get to keep.</p>
+            <div class="card-arrow">Explore the Pet collection →</div>
+          </a>
+          <a href="/studio/family" class="collection-card">
+            <div class="card-status coming">Opening soon</div>
+            <h3>Family &amp; Memorial</h3>
+            <p>Restored photographs, tribute songs, and remembrance kits for the people whose absence reshapes a family.</p>
+            <div class="card-arrow">See what's coming →</div>
+          </a>
+          <a href="/studio/legacy" class="collection-card">
+            <div class="card-status dev">In development</div>
+            <h3>Legacy</h3>
+            <p>Letters from one generation to the next. Living tributes, milestone keepsakes, and the words we want to leave behind.</p>
+            <div class="card-arrow">Glimpse the work in progress →</div>
+          </a>
+        </div>
+      </section>
+    </div>
 
+    <div class="container">
+      <section id="signup">
         <div class="cta-block">
           <h3>Begin with something free</h3>
-          <p>A Gentle 7 Days — a soft, printable companion for the first week of grief. Enter your email and we'll send it to you.</p>
+          <p><em>A Gentle 7 Days</em> — a soft, printable companion for the first week of pet grief. Trauma-informed prompts, one for each day. No payment, no pressure, ever.</p>
 
           <form class="signup-form" id="signup-form" novalidate>
             <div class="form-row">
@@ -493,15 +98,16 @@
                 <input type="month" name="dateOfLoss" id="dateOfLoss" />
               </div>
 
+              <div class="consent-row">
+                <input type="checkbox" id="consent" name="consent" required />
+                <label for="consent">Yes, I'd like to receive <em>A Gentle 7 Days</em> and HeirSong's gentle remembrance emails (one short welcome series, plus quiet anniversary reminders if I shared a date). I can unsubscribe in one click anytime.</label>
+              </div>
+
               <button type="submit" id="submit-btn">Send me the journal</button>
             </div>
 
             <div class="form-message" id="form-message" role="status" aria-live="polite"></div>
-
-            <p class="consent-note">By submitting, you agree to receive the 7-day companion and gentle remembrance emails. Unsubscribe in one click, anytime. We never share your address.</p>
           </form>
-
-          <p style="margin-top: 32px; font-size: 14px;">Looking for a printed-quality version or our full catalogue? <a href="https://stan.store/heirsong" target="_blank" rel="noopener">Visit our shop</a>.</p>
         </div>
       </section>
     </div>
@@ -514,87 +120,71 @@
       <ul>
         <li>We do not use urgency tactics.</li>
         <li>We do not retarget grief.</li>
-        <li>We do not show pet faces in ads.</li>
+        <li>We do not show pet or human faces in ads.</li>
       </ul>
     </div>
   </section>
 
   <div class="container">
-    <section class="resources" id="resources">
+    <section id="resources-teaser">
       <div class="eyebrow">If you're newly grieving</div>
       <h2>You are not alone, and there are people to call.</h2>
-      <p>HeirSong is one small studio. These organizations are larger, free, and staffed by people trained for this. If you are in the rawest part of grief, please reach for them first.</p>
-      <ul>
-        <li><strong>APLB</strong> — Association for Pet Loss and Bereavement · <a href="https://www.aplb.org" target="_blank" rel="noopener">aplb.org</a></li>
-        <li><strong>Cornell Pet Loss Hotline</strong> — free phone support · <a href="https://www.vet.cornell.edu/hospitals/services/pet-loss-support-hotline" target="_blank" rel="noopener">vet.cornell.edu</a></li>
-        <li><strong>Lap of Love</strong> — pet hospice and grief resources · <a href="https://www.lapoflove.com" target="_blank" rel="noopener">lapoflove.com</a></li>
-      </ul>
-    </section>
-
-    <section id="contact">
-      <div class="eyebrow">Contact</div>
-      <h2>We're here, quietly.</h2>
-      <p>For questions about a download, a custom request, or anything else — <a href="mailto:hello@heirsong.fr">hello@heirsong.fr</a>. We answer within two working days, often sooner.</p>
+      <p>HeirSong is one small studio. There are larger organizations — free, staffed by trained people — who can help. If you are in the rawest part of grief, please reach for them first.</p>
+      <p style="margin-top: 24px;"><a href="/resources">See our full grief resources page →</a></p>
     </section>
   </div>
 
-  <!-- Legal scaffolding: collapsed accordions, minimal real estate -->
-  <div class="legal-wrap" id="legal">
-    <details id="mentions-legales">
-      <summary>Mentions légales</summary>
-      <div class="legal-body">
-        <p><strong>Éditeur</strong> — Jinmyong Ri (nom d'usage&nbsp;: James), entrepreneur individuel · Nom commercial&nbsp;: HeirSong · SIRET 102 715 877 000 19 · 19 rue du Général Appert, 75016 Paris · <a href="mailto:hello@heirsong.fr">hello@heirsong.fr</a> · TVA non applicable, art. 293 B du CGI · Directeur de la publication&nbsp;: Jinmyong Ri.</p>
-        <p><strong>Hébergement</strong> — Vercel Inc., 340 S Lemon Ave #4133, Walnut, CA 91789, USA · <a href="https://vercel.com" target="_blank" rel="noopener">vercel.com</a></p>
-        <p>Contenus propriété exclusive de HeirSong. Toute reproduction interdite sans autorisation.</p>
-      </div>
-    </details>
-
-    <details id="confidentialite">
-      <summary>Politique de confidentialité</summary>
-      <div class="legal-body">
-        <h3>Responsable du traitement</h3>
-        <p>Jinmyong Ri, entrepreneur individuel — nom commercial HeirSong — SIRET 102 715 877 000 19 — <a href="mailto:hello@heirsong.fr">hello@heirsong.fr</a></p>
-        <h3>Données collectées</h3>
-        <ul>
-          <li><strong>Adresse e-mail</strong> — envoi du compagnon gratuit «&nbsp;A Gentle 7 Days&nbsp;» et des e-mails de bienvenue (RGPD art. 6.1.a, consentement)</li>
-          <li><strong>Prénom de l'animal et mois du décès</strong> (facultatifs) — personnalisation des e-mails de remembrance, sur consentement explicite</li>
-        </ul>
-        <p>Aucun cookie de mesure d'audience ni traceur publicitaire.</p>
-        <h3>Sous-traitants</h3>
-        <ul>
-          <li>Brevo (Sendinblue SAS, France) — envoi d'e-mails — serveurs UE</li>
-          <li>Vercel Inc. (États-Unis) — hébergement — clauses contractuelles types</li>
-        </ul>
-        <h3>Conservation et droits</h3>
-        <p>Données conservées tant que vous restez abonné. Désabonnement en un clic. Conformément aux articles 15 à 22 du RGPD, vous disposez d'un droit d'accès, de rectification, d'effacement, d'opposition et de portabilité&nbsp;: <a href="mailto:hello@heirsong.fr">hello@heirsong.fr</a>. Réclamation auprès de la CNIL — <a href="https://www.cnil.fr" target="_blank" rel="noopener">cnil.fr</a>.</p>
-      </div>
-    </details>
-  </div>
-
-  <footer>
-    <div class="container">
+  <footer class="site-footer">
+    <div class="container-wide">
       <div class="footer-grid">
-        <div>
-          <h4>HeirSong</h4>
+        <div class="footer-brand">
+          <a href="/" class="wordmark">HeirSong</a>
           <p>Rituals &amp; keepsakes for the moments that matter most.</p>
-          <p style="margin-top: 14px;"><a href="mailto:hello@heirsong.fr">hello@heirsong.fr</a></p>
         </div>
         <div>
-          <h4>Informations légales</h4>
+          <h4>The studio</h4>
           <ul>
-            <li><a href="#mentions-legales">Mentions légales</a></li>
-            <li><a href="#confidentialite">Politique de confidentialité</a></li>
-            <li><a href="#resources">Resources for grief</a></li>
+            <li><a href="/studio/pet">Pet collection</a></li>
+            <li><a href="/studio/family">Family &amp; Memorial</a></li>
+            <li><a href="/studio/legacy">Legacy</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Information</h4>
+          <ul>
+            <li><a href="/about">About HeirSong</a></li>
+            <li><a href="/resources">Grief resources</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <li><a href="/legal">Mentions légales</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Reach us</h4>
+          <ul>
+            <li><a href="mailto:hello@heirsong.fr">hello@heirsong.fr</a></li>
+            <li>Replies within two working days, often sooner.</li>
           </ul>
         </div>
       </div>
       <div class="footer-bottom">
-        © 2026 HeirSong · Entrepreneur individuel · Site édité depuis la France
+        © 2026 HeirSong · Jinmyong Ri, entrepreneur individuel · Site édité depuis la France
       </div>
     </div>
   </footer>
 
   <script>
+    // Mobile nav toggle
+    (function() {
+      const toggle = document.getElementById('menu-toggle');
+      const nav = document.getElementById('site-nav');
+      if (toggle && nav) {
+        toggle.addEventListener('click', function() {
+          nav.classList.toggle('open');
+        });
+      }
+    })();
+
+    // Signup form handler
     (function() {
       const form = document.getElementById('signup-form');
       const message = document.getElementById('form-message');
@@ -608,9 +198,15 @@
         const email = document.getElementById('email').value.trim();
         const petName = document.getElementById('petName').value.trim();
         const dateOfLoss = document.getElementById('dateOfLoss').value;
+        const consent = document.getElementById('consent').checked;
 
         if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
           showMessage('Please enter a valid email address.', 'error');
+          return;
+        }
+
+        if (!consent) {
+          showMessage('Please confirm you would like to receive the journal and our emails.', 'error');
           return;
         }
 
@@ -622,7 +218,7 @@
           const response = await fetch('/api/subscribe', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ email, petName, dateOfLoss }),
+            body: JSON.stringify({ email, petName, dateOfLoss, source: 'home — A Gentle 7 Days' }),
           });
 
           const data = await response.json();
