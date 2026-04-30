@@ -194,6 +194,95 @@
       border-bottom-color: var(--charcoal);
     }
 
+    /* Signup form */
+    .signup-form {
+      max-width: 420px;
+      margin: 0 auto;
+    }
+    .signup-form .form-row {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .signup-form input[type="email"],
+    .signup-form input[type="text"],
+    .signup-form input[type="month"] {
+      font-family: 'Lora', serif;
+      font-size: 16px;
+      padding: 14px 16px;
+      background: var(--cream);
+      border: 1px solid var(--rule);
+      color: var(--charcoal);
+      width: 100%;
+    }
+    .signup-form input:focus {
+      outline: none;
+      border-color: var(--sage);
+    }
+    .signup-form .field-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    @media (max-width: 480px) {
+      .signup-form .field-row { grid-template-columns: 1fr; }
+    }
+    .signup-form .optional-label {
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--charcoal-soft);
+      margin-top: 8px;
+      margin-bottom: 4px;
+      text-align: center;
+      font-style: italic;
+    }
+    .signup-form button {
+      font-family: 'Lora', serif;
+      font-size: 15px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 14px 32px;
+      background: var(--charcoal);
+      color: var(--cream);
+      border: 1px solid var(--charcoal);
+      cursor: pointer;
+      transition: background 200ms ease, color 200ms ease;
+      width: 100%;
+    }
+    .signup-form button:hover:not(:disabled) {
+      background: var(--terracotta);
+      border-color: var(--terracotta);
+    }
+    .signup-form button:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+    .form-message {
+      margin-top: 18px;
+      padding: 14px 18px;
+      font-size: 14px;
+      text-align: center;
+      display: none;
+    }
+    .form-message.success {
+      background: var(--sage);
+      color: var(--cream);
+      display: block;
+    }
+    .form-message.error {
+      background: var(--terracotta);
+      color: var(--cream);
+      display: block;
+    }
+    .consent-note {
+      font-size: 12px;
+      color: var(--charcoal-soft);
+      text-align: center;
+      margin-top: 14px;
+      line-height: 1.5;
+    }
+
     /* Ethics Charter */
     .charter {
       background: var(--sage);
@@ -392,8 +481,27 @@
 
         <div class="cta-block">
           <h3>Begin with something free</h3>
-          <p>A Gentle 7 Days — a soft, printable companion for the first week of grief. No payment. No pressure.</p>
-          <a class="button" href="https://stan.store/heirsong" target="_blank" rel="noopener">Open the free companion</a>
+          <p>A Gentle 7 Days — a soft, printable companion for the first week of grief. Enter your email and we'll send it to you.</p>
+
+          <form class="signup-form" id="signup-form" novalidate>
+            <div class="form-row">
+              <input type="email" name="email" id="email" placeholder="Your email address" required autocomplete="email" />
+
+              <div class="optional-label">Optional — for gentle anniversary remembrance</div>
+              <div class="field-row">
+                <input type="text" name="petName" id="petName" placeholder="Their name" autocomplete="off" />
+                <input type="month" name="dateOfLoss" id="dateOfLoss" />
+              </div>
+
+              <button type="submit" id="submit-btn">Send me the journal</button>
+            </div>
+
+            <div class="form-message" id="form-message" role="status" aria-live="polite"></div>
+
+            <p class="consent-note">By submitting, you agree to receive the 7-day companion and gentle remembrance emails. Unsubscribe in one click, anytime. We never share your address.</p>
+          </form>
+
+          <p style="margin-top: 32px; font-size: 14px;">Looking for a printed-quality version or our full catalogue? <a href="https://stan.store/heirsong" target="_blank" rel="noopener">Visit our shop</a>.</p>
         </div>
       </section>
     </div>
@@ -485,6 +593,61 @@
       </div>
     </div>
   </footer>
+
+  <script>
+    (function() {
+      const form = document.getElementById('signup-form');
+      const message = document.getElementById('form-message');
+      const submitBtn = document.getElementById('submit-btn');
+
+      if (!form) return;
+
+      form.addEventListener('submit', async function(e) {
+        e.preventDefault();
+
+        const email = document.getElementById('email').value.trim();
+        const petName = document.getElementById('petName').value.trim();
+        const dateOfLoss = document.getElementById('dateOfLoss').value;
+
+        if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+          showMessage('Please enter a valid email address.', 'error');
+          return;
+        }
+
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending...';
+        message.style.display = 'none';
+
+        try {
+          const response = await fetch('/api/subscribe', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email, petName, dateOfLoss }),
+          });
+
+          const data = await response.json();
+
+          if (response.ok && data.success) {
+            showMessage('Check your inbox — your gentle companion is on its way.', 'success');
+            form.reset();
+          } else {
+            showMessage(data.error || 'Something went wrong. Please try again.', 'error');
+          }
+        } catch (err) {
+          showMessage('Could not reach our servers. Please try again in a moment.', 'error');
+        } finally {
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Send me the journal';
+        }
+      });
+
+      function showMessage(text, type) {
+        message.textContent = text;
+        message.className = 'form-message ' + type;
+        message.style.display = 'block';
+      }
+    })();
+  </script>
 
 </body>
 </html>
