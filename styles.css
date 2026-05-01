@@ -583,6 +583,61 @@ section p:last-child { margin-bottom: 0; }
 }
 
 /* ============================================
+   Hero leaves decoration
+   ============================================ */
+
+.hero-leaves {
+  position: absolute;
+  top: 0;
+  right: -100px;
+  width: 70%;
+  max-width: 900px;
+  height: auto;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0;
+  animation: leavesFadeIn 2200ms ease-out 600ms forwards;
+}
+@media (max-width: 720px) {
+  .hero-leaves {
+    width: 110%;
+    right: -40px;
+    top: 40px;
+    opacity: 0.55;
+  }
+}
+@keyframes leavesFadeIn {
+  from { opacity: 0; transform: translateX(20px) translateY(-10px); }
+  to { opacity: 0.85; transform: translateX(0) translateY(0); }
+}
+@media (max-width: 720px) {
+  @keyframes leavesFadeIn {
+    from { opacity: 0; transform: translateX(20px) translateY(-10px); }
+    to { opacity: 0.55; transform: translateX(0) translateY(0); }
+  }
+}
+
+.hero-wrapper {
+  position: relative;
+}
+.hero-wrapper .hero {
+  position: relative;
+  z-index: 1;
+}
+
+/* Section divider with subtle leaf accent — uses cropped portion of same image */
+.leaf-divider {
+  text-align: center;
+  padding: 24px 0 8px;
+  margin: 0;
+}
+.leaf-divider img {
+  width: 140px;
+  height: auto;
+  opacity: 0.45;
+}
+
+/* ============================================
    Notify modal (Studio pages)
    ============================================ */
 
