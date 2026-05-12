@@ -116,7 +116,7 @@
       .site-nav-links a { font-size: 17px; }
     }
 
-    /* Hero */
+    /* Hero text */
     .hero {
       padding: 88px 0 72px;
       text-align: center;
@@ -138,14 +138,18 @@
       margin: 0 auto;
     }
 
-    /* Hero — botanical decoration layer */
-    .hero-block {
+    /* Extended decoration zone — wraps hero + first content section */
+    .decorated-zone {
       position: relative;
       overflow: hidden;
     }
-    .hero-block .container {
+    .decorated-zone > .container,
+    .decorated-zone > .hero-block {
       position: relative;
       z-index: 1;
+    }
+    .hero-block { /* now a simple inner wrapper */
+      position: relative;
     }
     .botanical-layer {
       position: absolute;
@@ -166,93 +170,37 @@
       -webkit-user-select: none;
     }
 
-    /* Primary scatter (corners + edges) */
-    .botanical--hero {
-      width: 340px;
-      top: -30px;
-      right: -60px;
-      transform: rotate(18deg);
-      opacity: 0.42;
-    }
-    .botanical--mid-left {
-      width: 260px;
-      bottom: -40px;
-      left: -55px;
-      transform: rotate(-28deg);
-      opacity: 0.38;
-    }
-    .botanical--mid-right {
-      width: 210px;
-      bottom: 6%;
-      right: -50px;
-      transform: rotate(28deg);
-      opacity: 0.36;
-    }
-    .botanical--accent {
-      width: 150px;
-      top: 14%;
-      left: -25px;
-      transform: rotate(-15deg);
-      opacity: 0.32;
-    }
+    /* 10 sprigs, uniform 160-200px size range, in outer side margins */
+    /* Left side — top to bottom */
+    .b-l1 { top: 2%;  left: 1%;  width: 185px; transform: rotate(-18deg); opacity: 0.30; }
+    .b-l2 { top: 17%; left: 6%;  width: 160px; transform: rotate(-55deg); opacity: 0.24; }
+    .b-l3 { top: 33%; left: 1%;  width: 195px; transform: rotate(28deg);  opacity: 0.30; }
+    .b-l4 { top: 55%; left: 4%;  width: 170px; transform: rotate(-42deg); opacity: 0.26; }
+    .b-l5 { top: 78%; left: 2%;  width: 175px; transform: rotate(85deg);  opacity: 0.26; }
 
-    /* Secondary scatter (mid-band fill) */
-    .botanical--upper-left {
-      width: 180px;
-      top: 6%;
-      left: 12%;
-      transform: rotate(-50deg);
-      opacity: 0.22;
-    }
-    .botanical--upper-right {
-      width: 165px;
-      top: 8%;
-      right: 14%;
-      transform: rotate(45deg);
-      opacity: 0.20;
-    }
-    .botanical--lower-left {
-      width: 140px;
-      bottom: 14%;
-      left: 18%;
-      transform: rotate(110deg);
-      opacity: 0.18;
-    }
-    .botanical--lower-right {
-      width: 195px;
-      bottom: 30%;
-      right: 8%;
-      transform: rotate(-65deg);
-      opacity: 0.24;
-    }
+    /* Right side — top to bottom (offset y-positions from left so no symmetry) */
+    .b-r1 { top: 6%;  right: 1%; width: 200px; transform: rotate(20deg);  opacity: 0.32; }
+    .b-r2 { top: 24%; right: 6%; width: 165px; transform: rotate(50deg);  opacity: 0.24; }
+    .b-r3 { top: 44%; right: 1%; width: 180px; transform: rotate(-28deg); opacity: 0.28; }
+    .b-r4 { top: 64%; right: 5%; width: 160px; transform: rotate(65deg);  opacity: 0.22; }
+    .b-r5 { top: 84%; right: 2%; width: 175px; transform: rotate(-15deg); opacity: 0.28; }
 
     @media (max-width: 900px) {
-      .botanical--hero    { width: 230px; right: -35px; }
-      .botanical--mid-left  { width: 185px; left: -28px; }
-      .botanical--mid-right { width: 155px; right: -30px; }
-      .botanical--accent  { width: 115px; left: -12px; }
-      .botanical--upper-left { width: 125px; left: 6%; }
-      .botanical--upper-right { width: 115px; right: 8%; }
-      .botanical--lower-left { width: 95px; left: 12%; }
-      .botanical--lower-right { width: 135px; right: 4%; }
+      .b-l1, .b-l3, .b-l5 { width: 140px; }
+      .b-l2, .b-l4 { width: 115px; }
+      .b-r1, .b-r3, .b-r5 { width: 145px; }
+      .b-r2, .b-r4 { width: 120px; }
     }
 
     @media (max-width: 600px) {
-      .botanical--hero    { width: 160px; top: -15px; right: -30px; opacity: 0.36; }
-      .botanical--mid-left  { width: 130px; left: -20px; bottom: -20px; opacity: 0.32; }
-      .botanical--mid-right { display: none; }
-      .botanical--accent  { display: none; }
-      .botanical--upper-left { display: none; }
-      .botanical--upper-right { display: none; }
-      .botanical--lower-left { display: none; }
-      .botanical--lower-right { display: none; }
+      .b-l2, .b-l3, .b-l4, .b-l5 { display: none; }
+      .b-r2, .b-r3, .b-r4, .b-r5 { display: none; }
+      .b-l1 { width: 130px; left: -10px; top: 1%; opacity: 0.30; }
+      .b-r1 { width: 145px; right: -15px; top: 4%; opacity: 0.32; }
     }
 
     @media (prefers-reduced-motion: reduce) {
-      .botanical-layer {
-        animation: none;
-        opacity: 1;
-      }
+      .botanical-layer { animation: none; opacity: 1; }
     }
 
     /* Sections */
@@ -487,58 +435,63 @@
   </nav>
 
   <main>
-    <div class="hero-block">
+    <div class="decorated-zone">
       <div class="botanical-layer" aria-hidden="true">
-        <!-- Primary scatter -->
-        <img class="botanical botanical--hero" src="img/botanical/botanical-hero.png" alt="" loading="eager" decoding="async" />
-        <img class="botanical botanical--mid-left" src="img/botanical/botanical-mid-left.png" alt="" loading="eager" decoding="async" />
-        <img class="botanical botanical--mid-right" src="img/botanical/botanical-mid-right.png" alt="" loading="eager" decoding="async" />
-        <img class="botanical botanical--accent" src="img/botanical/botanical-accent.png" alt="" loading="eager" decoding="async" />
-        <!-- Secondary scatter (reused sprigs at additional positions) -->
-        <img class="botanical botanical--upper-left" src="img/botanical/botanical-mid-left.png" alt="" loading="lazy" decoding="async" />
-        <img class="botanical botanical--upper-right" src="img/botanical/botanical-accent.png" alt="" loading="lazy" decoding="async" />
-        <img class="botanical botanical--lower-left" src="img/botanical/botanical-mid-right.png" alt="" loading="lazy" decoding="async" />
-        <img class="botanical botanical--lower-right" src="img/botanical/botanical-hero.png" alt="" loading="lazy" decoding="async" />
+        <!-- Left column -->
+        <img class="botanical b-l1" src="img/botanical/botanical-hero.png"      alt="" loading="eager" decoding="async" />
+        <img class="botanical b-l2" src="img/botanical/botanical-accent.png"    alt="" loading="eager" decoding="async" />
+        <img class="botanical b-l3" src="img/botanical/botanical-mid-right.png" alt="" loading="lazy"  decoding="async" />
+        <img class="botanical b-l4" src="img/botanical/botanical-mid-left.png"  alt="" loading="lazy"  decoding="async" />
+        <img class="botanical b-l5" src="img/botanical/botanical-hero.png"      alt="" loading="lazy"  decoding="async" />
+        <!-- Right column -->
+        <img class="botanical b-r1" src="img/botanical/botanical-mid-left.png"  alt="" loading="eager" decoding="async" />
+        <img class="botanical b-r2" src="img/botanical/botanical-accent.png"    alt="" loading="eager" decoding="async" />
+        <img class="botanical b-r3" src="img/botanical/botanical-mid-right.png" alt="" loading="lazy"  decoding="async" />
+        <img class="botanical b-r4" src="img/botanical/botanical-hero.png"      alt="" loading="lazy"  decoding="async" />
+        <img class="botanical b-r5" src="img/botanical/botanical-mid-left.png"  alt="" loading="lazy"  decoding="async" />
       </div>
+
+      <div class="hero-block">
+        <div class="container">
+          <section class="hero">
+            <h1>The companions we don't get to keep deserve a soft place to set down the love.</h1>
+            <p class="tagline">Rituals &amp; keepsakes for the moments that matter most.</p>
+          </section>
+        </div>
+      </div>
+
       <div class="container">
-        <section class="hero">
-          <h1>The companions we don't get to keep deserve a soft place to set down the love.</h1>
-          <p class="tagline">Rituals &amp; keepsakes for the moments that matter most.</p>
+        <section id="what-we-make">
+          <div class="eyebrow">What we make</div>
+          <h2>Quiet, dignified digital keepsakes for pet loss</h2>
+          <p>HeirSong is an independent studio creating soft, trauma-informed templates and rituals for grieving pet parents. Everything is delivered as instant digital downloads — used the moment you need them, kept as long as you need them.</p>
+
+          <ul class="offerings">
+            <li>
+              <h3>Eulogy &amp; ceremony templates</h3>
+              <p>Fillable speech templates and at-home memorial service scripts — for the day someone asks you to speak, and the small ceremony you want to hold.</p>
+            </li>
+            <li>
+              <h3>Pet grief journals</h3>
+              <p>Trauma-informed daily prompts grounded in the work of the Association for Pet Loss and Bereavement. For the twenty-eight days no one tells you about.</p>
+            </li>
+            <li>
+              <h3>Anniversary &amp; remembrance kits</h3>
+              <p>One-month, six-month, one-year rituals. The first holiday without them. The birthday that would have been.</p>
+            </li>
+            <li>
+              <h3>Custom watercolor portraits</h3>
+              <p>Hand-styled keepsake portraits and tribute letters — the way you'll always picture them, made still. <em>Available later in 2026.</em></p>
+            </li>
+          </ul>
+
+          <div class="cta-block">
+            <h3>Begin with something free</h3>
+            <p>A Gentle 7 Days — a soft, printable companion for the first week of grief. No payment. No pressure.</p>
+            <a class="button" href="https://stan.store/heirsong" target="_blank" rel="noopener">Open the free companion</a>
+          </div>
         </section>
       </div>
-    </div>
-
-    <div class="container">
-      <section id="what-we-make">
-        <div class="eyebrow">What we make</div>
-        <h2>Quiet, dignified digital keepsakes for pet loss</h2>
-        <p>HeirSong is an independent studio creating soft, trauma-informed templates and rituals for grieving pet parents. Everything is delivered as instant digital downloads — used the moment you need them, kept as long as you need them.</p>
-
-        <ul class="offerings">
-          <li>
-            <h3>Eulogy &amp; ceremony templates</h3>
-            <p>Fillable speech templates and at-home memorial service scripts — for the day someone asks you to speak, and the small ceremony you want to hold.</p>
-          </li>
-          <li>
-            <h3>Pet grief journals</h3>
-            <p>Trauma-informed daily prompts grounded in the work of the Association for Pet Loss and Bereavement. For the twenty-eight days no one tells you about.</p>
-          </li>
-          <li>
-            <h3>Anniversary &amp; remembrance kits</h3>
-            <p>One-month, six-month, one-year rituals. The first holiday without them. The birthday that would have been.</p>
-          </li>
-          <li>
-            <h3>Custom watercolor portraits</h3>
-            <p>Hand-styled keepsake portraits and tribute letters — the way you'll always picture them, made still. <em>Available later in 2026.</em></p>
-          </li>
-        </ul>
-
-        <div class="cta-block">
-          <h3>Begin with something free</h3>
-          <p>A Gentle 7 Days — a soft, printable companion for the first week of grief. No payment. No pressure.</p>
-          <a class="button" href="https://stan.store/heirsong" target="_blank" rel="noopener">Open the free companion</a>
-        </div>
-      </section>
     </div>
   </main>
 
