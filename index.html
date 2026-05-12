@@ -19,137 +19,17 @@
   <link rel="stylesheet" href="styles.css" />
 
   <style>
-    :root {
-      --sage: #A8B5A0;
-      --terracotta: #C9907E;
-      --cream: #F5F0E8;
-      --cream-soft: #FBF8F2;
-      --charcoal: #3A3A3A;
-      --charcoal-soft: #5A5A5A;
-      --rule: #E4DDD0;
-    }
+    /* Homepage-only: botanical decoration layer
+       (Everything else inherits from styles.css) */
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      font-family: 'Lora', Georgia, serif;
-      font-weight: 400;
-      font-size: 17px;
-      line-height: 1.7;
-      color: var(--charcoal);
-      background: var(--cream);
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
-
-    h1, h2, h3, h4 {
-      font-family: 'Cormorant Garamond', 'Garamond', serif;
-      font-weight: 500;
-      letter-spacing: 0.005em;
-      color: var(--charcoal);
-    }
-
-    a {
-      color: var(--terracotta);
-      text-decoration: none;
-      border-bottom: 1px solid transparent;
-      transition: border-color 200ms ease, color 200ms ease;
-    }
-    a:hover { border-color: var(--terracotta); }
-
-    .container {
-      max-width: 720px;
-      margin: 0 auto;
-      padding: 0 28px;
-    }
-
-    /* Top navigation */
-    .site-nav {
-      padding: 28px 0;
-      border-bottom: 1px solid var(--rule);
-      background: var(--cream);
-      position: relative;
-      z-index: 10;
-    }
-    .site-nav-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 40px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 32px;
-    }
-    .site-nav .wordmark {
-      font-family: 'Cormorant Garamond', serif;
-      font-weight: 500;
-      font-size: 22px;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--charcoal);
-      border-bottom: none;
-    }
-    .site-nav .wordmark:hover { border-bottom: none; }
-    .site-nav-links {
-      list-style: none;
-      display: flex;
-      gap: 40px;
-      align-items: center;
-    }
-    .site-nav-links a {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 20px;
-      color: var(--charcoal);
-      letter-spacing: 0.01em;
-      padding-bottom: 4px;
-      border-bottom: 1px solid transparent;
-    }
-    .site-nav-links a:hover,
-    .site-nav-links a.is-current {
-      border-bottom-color: var(--terracotta);
-    }
-    @media (max-width: 720px) {
-      .site-nav-inner { flex-direction: column; gap: 16px; padding: 0 20px; }
-      .site-nav-links { gap: 22px; flex-wrap: wrap; justify-content: center; }
-      .site-nav-links a { font-size: 17px; }
-    }
-
-    /* Hero text */
-    .hero {
-      padding: 88px 0 72px;
-      text-align: center;
-    }
-    .hero h1 {
-      font-size: clamp(34px, 6vw, 52px);
-      line-height: 1.18;
-      font-style: italic;
-      font-weight: 400;
-      max-width: 16ch;
-      margin: 0 auto 28px;
-    }
-    .hero .tagline {
-      font-family: 'Lora', serif;
-      font-style: italic;
-      color: var(--charcoal-soft);
-      font-size: 19px;
-      max-width: 32ch;
-      margin: 0 auto;
-    }
-
-    /* Extended decoration zone — wraps hero + first content section */
     .decorated-zone {
       position: relative;
       overflow: hidden;
     }
     .decorated-zone > .container,
-    .decorated-zone > .hero-block {
+    .decorated-zone > .hero-wrapper {
       position: relative;
       z-index: 1;
-    }
-    .hero-block { /* now a simple inner wrapper */
-      position: relative;
     }
     .botanical-layer {
       position: absolute;
@@ -171,14 +51,11 @@
     }
 
     /* 10 sprigs, uniform 160-200px size range, in outer side margins */
-    /* Left side — top to bottom */
     .b-l1 { top: 2%;  left: 1%;  width: 185px; transform: rotate(-18deg); opacity: 0.30; }
     .b-l2 { top: 17%; left: 6%;  width: 160px; transform: rotate(-55deg); opacity: 0.24; }
     .b-l3 { top: 33%; left: 1%;  width: 195px; transform: rotate(28deg);  opacity: 0.30; }
     .b-l4 { top: 55%; left: 4%;  width: 170px; transform: rotate(-42deg); opacity: 0.26; }
     .b-l5 { top: 78%; left: 2%;  width: 175px; transform: rotate(85deg);  opacity: 0.26; }
-
-    /* Right side — top to bottom (offset y-positions from left so no symmetry) */
     .b-r1 { top: 6%;  right: 1%; width: 200px; transform: rotate(20deg);  opacity: 0.32; }
     .b-r2 { top: 24%; right: 6%; width: 165px; transform: rotate(50deg);  opacity: 0.24; }
     .b-r3 { top: 44%; right: 1%; width: 180px; transform: rotate(-28deg); opacity: 0.28; }
@@ -191,48 +68,17 @@
       .b-r1, .b-r3, .b-r5 { width: 145px; }
       .b-r2, .b-r4 { width: 120px; }
     }
-
     @media (max-width: 600px) {
       .b-l2, .b-l3, .b-l4, .b-l5 { display: none; }
       .b-r2, .b-r3, .b-r4, .b-r5 { display: none; }
       .b-l1 { width: 130px; left: -10px; top: 1%; opacity: 0.30; }
       .b-r1 { width: 145px; right: -15px; top: 4%; opacity: 0.32; }
     }
-
     @media (prefers-reduced-motion: reduce) {
       .botanical-layer { animation: none; opacity: 1; }
     }
 
-    /* Sections */
-    section {
-      padding: 64px 0;
-      border-top: 1px solid var(--rule);
-    }
-    section:first-of-type { border-top: none; }
-
-    .eyebrow {
-      font-family: 'Lora', serif;
-      font-size: 12px;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--sage);
-      margin-bottom: 18px;
-      font-weight: 500;
-    }
-    section h2 {
-      font-size: clamp(28px, 4vw, 36px);
-      font-weight: 500;
-      margin-bottom: 24px;
-      line-height: 1.25;
-    }
-    section p {
-      max-width: 60ch;
-      margin-bottom: 18px;
-      color: var(--charcoal-soft);
-    }
-    section p:last-child { margin-bottom: 0; }
-
-    /* What we make */
+    /* Homepage offerings list (keeps original structure) */
     .offerings {
       list-style: none;
       display: grid;
@@ -254,140 +100,13 @@
       margin: 0;
     }
 
-    /* CTA */
-    .cta-block {
-      background: var(--cream-soft);
-      padding: 48px 32px;
-      text-align: center;
-      margin-top: 40px;
-      border: 1px solid var(--rule);
-    }
-    .cta-block h3 {
-      font-size: 28px;
-      font-style: italic;
-      font-weight: 400;
-      margin-bottom: 14px;
-    }
-    .cta-block p {
-      max-width: 44ch;
-      margin: 0 auto 28px;
-      color: var(--charcoal-soft);
-    }
-    .button {
-      display: inline-block;
-      font-family: 'Lora', serif;
-      font-size: 15px;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      padding: 14px 32px;
-      background: var(--charcoal);
-      color: var(--cream);
-      border: 1px solid var(--charcoal);
-      transition: background 200ms ease, color 200ms ease;
-    }
-    .button:hover {
-      background: var(--cream);
-      color: var(--charcoal);
-      border-bottom-color: var(--charcoal);
-    }
-
-    /* Ethics Charter */
-    .charter {
-      background: var(--sage);
-      color: var(--cream);
-      padding: 64px 0;
-      margin: 0;
-      border: none;
-    }
-    .charter .eyebrow { color: var(--cream); opacity: 0.75; }
-    .charter h2 { color: var(--cream); }
-    .charter ul {
-      list-style: none;
-      max-width: 44ch;
-      margin: 24px 0 0 0;
-    }
-    .charter li {
-      font-family: 'Cormorant Garamond', serif;
-      font-style: italic;
-      font-size: 22px;
-      line-height: 1.5;
-      padding: 14px 0;
-      border-bottom: 1px solid rgba(245, 240, 232, 0.25);
-      color: var(--cream);
-    }
-    .charter li:last-child { border-bottom: none; }
-
-    /* Resources */
-    .resources p { font-size: 16px; }
-    .resources ul {
-      list-style: none;
-      margin-top: 18px;
-    }
-    .resources li {
-      padding: 8px 0;
-      font-size: 16px;
-    }
-
-    /* Footer */
-    footer {
-      background: var(--charcoal);
-      color: var(--cream);
-      padding: 64px 0 40px;
-      font-size: 14px;
-      line-height: 1.7;
-    }
-    footer .container { max-width: 760px; }
-    footer h4 {
-      color: var(--cream);
-      font-size: 13px;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      font-weight: 500;
-      margin-bottom: 14px;
-      opacity: 0.7;
-    }
-    footer .footer-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 48px;
-      margin-bottom: 48px;
-    }
-    @media (max-width: 600px) {
-      footer .footer-grid { grid-template-columns: 1fr; gap: 32px; }
-    }
-    footer p, footer li {
-      color: rgba(245, 240, 232, 0.78);
-      font-size: 14px;
-    }
-    footer ul { list-style: none; }
-    footer li { padding: 4px 0; }
-    footer a {
-      color: var(--cream);
-      opacity: 0.85;
-      border-bottom-color: rgba(245, 240, 232, 0.3);
-    }
-    footer a:hover {
-      opacity: 1;
-      border-bottom-color: var(--cream);
-    }
-    .footer-bottom {
-      padding-top: 28px;
-      border-top: 1px solid rgba(245, 240, 232, 0.15);
-      font-size: 12px;
-      opacity: 0.6;
-      text-align: center;
-    }
-
-    /* Legal sections */
+    /* Legal sections (homepage-only anchors until /legal page exists) */
     .legal {
       background: var(--cream-soft);
       padding: 72px 0;
       border-top: 1px solid var(--rule);
     }
-    .legal h2 {
-      font-size: 28px;
-      margin-bottom: 12px;
-    }
+    .legal h2 { font-size: 28px; margin-bottom: 12px; }
     .legal h3 {
       font-size: 18px;
       font-weight: 500;
@@ -403,47 +122,35 @@
       margin-bottom: 14px;
     }
     .legal li { padding: 4px 0; }
-
-    /* Subtle entrance */
-    @media (prefers-reduced-motion: no-preference) {
-      .hero h1, .hero .tagline {
-        opacity: 0;
-        animation: fadeUp 900ms ease 200ms forwards;
-      }
-      .hero .tagline { animation-delay: 500ms; }
-    }
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(8px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
   </style>
 </head>
 
 <body>
 
-  <nav class="site-nav" aria-label="Primary">
-    <div class="site-nav-inner">
+  <header class="site-header">
+    <div class="container-wide">
       <a href="/" class="wordmark">HeirSong</a>
-      <ul class="site-nav-links">
-        <li><a href="/" class="is-current">Home</a></li>
-        <li><a href="/about">About</a></li>
-        <li><a href="/studio">Studio</a></li>
-        <li><a href="/resources">Resources</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+      <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><line x1="3" y1="6" x2="19" y2="6"/><line x1="3" y1="11" x2="19" y2="11"/><line x1="3" y1="16" x2="19" y2="16"/></svg>
+      </button>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="/" class="active">Home</a>
+        <a href="/about">About</a>
+        <a href="/studio">Studio</a>
+        <a href="/resources">Resources</a>
+        <a href="/contact">Contact</a>
+      </nav>
     </div>
-  </nav>
+  </header>
 
   <main>
     <div class="decorated-zone">
       <div class="botanical-layer" aria-hidden="true">
-        <!-- Left column -->
         <img class="botanical b-l1" src="img/botanical/botanical-hero.png"      alt="" loading="eager" decoding="async" />
         <img class="botanical b-l2" src="img/botanical/botanical-accent.png"    alt="" loading="eager" decoding="async" />
         <img class="botanical b-l3" src="img/botanical/botanical-mid-right.png" alt="" loading="lazy"  decoding="async" />
         <img class="botanical b-l4" src="img/botanical/botanical-mid-left.png"  alt="" loading="lazy"  decoding="async" />
         <img class="botanical b-l5" src="img/botanical/botanical-hero.png"      alt="" loading="lazy"  decoding="async" />
-        <!-- Right column -->
         <img class="botanical b-r1" src="img/botanical/botanical-mid-left.png"  alt="" loading="eager" decoding="async" />
         <img class="botanical b-r2" src="img/botanical/botanical-accent.png"    alt="" loading="eager" decoding="async" />
         <img class="botanical b-r3" src="img/botanical/botanical-mid-right.png" alt="" loading="lazy"  decoding="async" />
@@ -451,7 +158,7 @@
         <img class="botanical b-r5" src="img/botanical/botanical-mid-left.png"  alt="" loading="lazy"  decoding="async" />
       </div>
 
-      <div class="hero-block">
+      <div class="hero-wrapper">
         <div class="container">
           <section class="hero">
             <h1>The companions we don't get to keep deserve a soft place to set down the love.</h1>
@@ -518,15 +225,9 @@
         <li><strong>Lap of Love</strong> — pet hospice and grief resources · <a href="https://www.lapoflove.com" target="_blank" rel="noopener">lapoflove.com</a></li>
       </ul>
     </section>
-
-    <section id="contact">
-      <div class="eyebrow">Contact</div>
-      <h2>We're here, quietly.</h2>
-      <p>For questions about a download, a custom request, or anything else — <a href="mailto:hello@heirsong.fr">hello@heirsong.fr</a>. We answer within two working days, often sooner.</p>
-    </section>
   </div>
 
-  <!-- Legal scaffolding (in-page anchors; will move to separate pages) -->
+  <!-- Legal scaffolding (in-page anchors; will move to separate /legal page) -->
   <section class="legal" id="mentions-legales">
     <div class="container">
       <div class="eyebrow">Mentions légales</div>
@@ -613,21 +314,35 @@
     </div>
   </section>
 
-  <footer>
-    <div class="container">
+  <footer class="site-footer">
+    <div class="container-wide">
       <div class="footer-grid">
-        <div>
-          <h4>HeirSong</h4>
+        <div class="footer-brand">
+          <a href="/" class="wordmark">HeirSong</a>
           <p>Rituals &amp; keepsakes for the moments that matter most.</p>
           <p style="margin-top: 14px;"><a href="mailto:hello@heirsong.fr">hello@heirsong.fr</a></p>
+        </div>
+        <div>
+          <h4>Studio</h4>
+          <ul>
+            <li><a href="/studio">Overview</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/contact">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="/resources">For grief</a></li>
+            <li><a href="https://stan.store/heirsong" target="_blank" rel="noopener">Free companion</a></li>
+          </ul>
         </div>
         <div>
           <h4>Informations légales</h4>
           <ul>
             <li><a href="#mentions-legales">Mentions légales</a></li>
-            <li><a href="#cgv">Conditions Générales de Vente</a></li>
-            <li><a href="#confidentialite">Politique de confidentialité</a></li>
-            <li><a href="#resources">Resources for grief</a></li>
+            <li><a href="#cgv">CGV</a></li>
+            <li><a href="#confidentialite">Confidentialité</a></li>
           </ul>
         </div>
       </div>
@@ -636,6 +351,19 @@
       </div>
     </div>
   </footer>
+
+  <script>
+    // Mobile menu toggle (matches styles.css .menu-toggle / .site-nav.open)
+    (function() {
+      var btn = document.querySelector('.menu-toggle');
+      var nav = document.querySelector('.site-nav');
+      if (!btn || !nav) return;
+      btn.addEventListener('click', function() {
+        var open = nav.classList.toggle('open');
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+    })();
+  </script>
 
 </body>
 </html>
