@@ -16,6 +16,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
 
   <style>
     :root {
@@ -64,24 +65,55 @@
       padding: 0 28px;
     }
 
-    /* Header */
-    header {
-      padding: 56px 0 0 0;
-      text-align: center;
+    /* Top navigation */
+    .site-nav {
+      padding: 28px 0;
+      border-bottom: 1px solid var(--rule);
+      background: var(--cream);
+      position: relative;
+      z-index: 10;
     }
-    .wordmark {
+    .site-nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+    }
+    .site-nav .wordmark {
       font-family: 'Cormorant Garamond', serif;
       font-weight: 500;
-      font-size: 28px;
+      font-size: 22px;
       letter-spacing: 0.18em;
       text-transform: uppercase;
       color: var(--charcoal);
+      border-bottom: none;
     }
-    .wordmark-rule {
-      width: 36px;
-      height: 1px;
-      background: var(--terracotta);
-      margin: 18px auto 0;
+    .site-nav .wordmark:hover { border-bottom: none; }
+    .site-nav-links {
+      list-style: none;
+      display: flex;
+      gap: 40px;
+      align-items: center;
+    }
+    .site-nav-links a {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px;
+      color: var(--charcoal);
+      letter-spacing: 0.01em;
+      padding-bottom: 4px;
+      border-bottom: 1px solid transparent;
+    }
+    .site-nav-links a:hover,
+    .site-nav-links a.is-current {
+      border-bottom-color: var(--terracotta);
+    }
+    @media (max-width: 720px) {
+      .site-nav-inner { flex-direction: column; gap: 16px; padding: 0 20px; }
+      .site-nav-links { gap: 22px; flex-wrap: wrap; justify-content: center; }
+      .site-nav-links a { font-size: 17px; }
     }
 
     /* Hero */
@@ -133,46 +165,89 @@
       -webkit-user-drag: none;
       -webkit-user-select: none;
     }
+
+    /* Primary scatter (corners + edges) */
     .botanical--hero {
-      width: 280px;
-      top: -20px;
-      right: -50px;
+      width: 340px;
+      top: -30px;
+      right: -60px;
       transform: rotate(18deg);
-      opacity: 0.34;
+      opacity: 0.42;
     }
     .botanical--mid-left {
-      width: 210px;
-      bottom: -30px;
-      left: -45px;
+      width: 260px;
+      bottom: -40px;
+      left: -55px;
       transform: rotate(-28deg);
-      opacity: 0.28;
+      opacity: 0.38;
     }
     .botanical--mid-right {
-      width: 175px;
-      bottom: 8%;
-      right: -40px;
+      width: 210px;
+      bottom: 6%;
+      right: -50px;
       transform: rotate(28deg);
-      opacity: 0.28;
+      opacity: 0.36;
     }
     .botanical--accent {
-      width: 115px;
-      top: 12%;
-      left: -20px;
+      width: 150px;
+      top: 14%;
+      left: -25px;
       transform: rotate(-15deg);
+      opacity: 0.32;
+    }
+
+    /* Secondary scatter (mid-band fill) */
+    .botanical--upper-left {
+      width: 180px;
+      top: 6%;
+      left: 12%;
+      transform: rotate(-50deg);
       opacity: 0.22;
     }
-    @media (max-width: 900px) {
-      .botanical--hero    { width: 200px; right: -30px; }
-      .botanical--mid-left  { width: 150px; left: -20px; }
-      .botanical--mid-right { width: 130px; right: -25px; }
-      .botanical--accent  { width: 90px; left: -10px; }
+    .botanical--upper-right {
+      width: 165px;
+      top: 8%;
+      right: 14%;
+      transform: rotate(45deg);
+      opacity: 0.20;
     }
+    .botanical--lower-left {
+      width: 140px;
+      bottom: 14%;
+      left: 18%;
+      transform: rotate(110deg);
+      opacity: 0.18;
+    }
+    .botanical--lower-right {
+      width: 195px;
+      bottom: 30%;
+      right: 8%;
+      transform: rotate(-65deg);
+      opacity: 0.24;
+    }
+
+    @media (max-width: 900px) {
+      .botanical--hero    { width: 230px; right: -35px; }
+      .botanical--mid-left  { width: 185px; left: -28px; }
+      .botanical--mid-right { width: 155px; right: -30px; }
+      .botanical--accent  { width: 115px; left: -12px; }
+      .botanical--upper-left { width: 125px; left: 6%; }
+      .botanical--upper-right { width: 115px; right: 8%; }
+      .botanical--lower-left { width: 95px; left: 12%; }
+      .botanical--lower-right { width: 135px; right: 4%; }
+    }
+
     @media (max-width: 600px) {
-      .botanical--hero    { width: 140px; top: -10px; right: -25px; }
-      .botanical--mid-left  { width: 110px; left: -15px; bottom: -15px; }
+      .botanical--hero    { width: 160px; top: -15px; right: -30px; opacity: 0.36; }
+      .botanical--mid-left  { width: 130px; left: -20px; bottom: -20px; opacity: 0.32; }
       .botanical--mid-right { display: none; }
       .botanical--accent  { display: none; }
+      .botanical--upper-left { display: none; }
+      .botanical--upper-right { display: none; }
+      .botanical--lower-left { display: none; }
+      .botanical--lower-right { display: none; }
     }
+
     @media (prefers-reduced-motion: reduce) {
       .botanical-layer {
         animation: none;
@@ -398,20 +473,32 @@
 
 <body>
 
-  <header>
-    <div class="container">
-      <div class="wordmark">HeirSong</div>
-      <div class="wordmark-rule"></div>
+  <nav class="site-nav" aria-label="Primary">
+    <div class="site-nav-inner">
+      <a href="/" class="wordmark">HeirSong</a>
+      <ul class="site-nav-links">
+        <li><a href="/" class="is-current">Home</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/studio">Studio</a></li>
+        <li><a href="/resources">Resources</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
     </div>
-  </header>
+  </nav>
 
   <main>
     <div class="hero-block">
       <div class="botanical-layer" aria-hidden="true">
+        <!-- Primary scatter -->
         <img class="botanical botanical--hero" src="img/botanical/botanical-hero.png" alt="" loading="eager" decoding="async" />
         <img class="botanical botanical--mid-left" src="img/botanical/botanical-mid-left.png" alt="" loading="eager" decoding="async" />
         <img class="botanical botanical--mid-right" src="img/botanical/botanical-mid-right.png" alt="" loading="eager" decoding="async" />
         <img class="botanical botanical--accent" src="img/botanical/botanical-accent.png" alt="" loading="eager" decoding="async" />
+        <!-- Secondary scatter (reused sprigs at additional positions) -->
+        <img class="botanical botanical--upper-left" src="img/botanical/botanical-mid-left.png" alt="" loading="lazy" decoding="async" />
+        <img class="botanical botanical--upper-right" src="img/botanical/botanical-accent.png" alt="" loading="lazy" decoding="async" />
+        <img class="botanical botanical--lower-left" src="img/botanical/botanical-mid-right.png" alt="" loading="lazy" decoding="async" />
+        <img class="botanical botanical--lower-right" src="img/botanical/botanical-hero.png" alt="" loading="lazy" decoding="async" />
       </div>
       <div class="container">
         <section class="hero">
