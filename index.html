@@ -109,8 +109,7 @@
       margin: 22px auto 0;
       text-align: left;
     }
-    .subscribe-form input[type="email"],
-    .subscribe-form input[type="text"] {
+    .subscribe-form input[type="email"] {
       width: 100%;
       padding: 12px 14px;
       font-family: 'Lora', Georgia, serif;
@@ -255,9 +254,6 @@
               <label for="hs-email" class="visually-hidden">Your email address</label>
               <input type="email" id="hs-email" name="email" placeholder="Your email address" required autocomplete="email" />
 
-              <label for="hs-petname" class="visually-hidden">Your pet's name (optional)</label>
-              <input type="text" id="hs-petname" name="petName" placeholder="Your pet's name (optional)" autocomplete="off" />
-
               <div class="consent-row">
                 <input type="checkbox" id="hs-consent" name="consent" required />
                 <label for="hs-consent">I agree to receive email communication from HeirSong — the free 7-day companion, occasional gentle resources, and date-based remembrance emails. I can unsubscribe at any time using the link in every email.</label>
@@ -350,6 +346,8 @@
     })();
 
     // Subscribe form — POSTs to /api/subscribe (Vercel serverless → Brevo list 3)
+    // Per mentor panel decision: capture email + consent only at first contact.
+    // Pet name + date of loss collected later in welcome sequence, after value delivered.
     (function () {
       var form = document.getElementById('heirsong-subscribe-form');
       if (!form) return;
@@ -366,7 +364,6 @@
         setStatus('', false);
 
         var email = document.getElementById('hs-email').value.trim();
-        var petName = document.getElementById('hs-petname').value.trim();
         var consent = document.getElementById('hs-consent').checked;
 
         if (!email) { setStatus('Please enter your email address.', true); return; }
@@ -381,7 +378,6 @@
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
             email: email,
-            petName: petName,
             source: 'homepage-subscribe'
           })
         })
@@ -390,7 +386,7 @@
           })
           .then(function (res) {
             if (res.ok) {
-              setStatus('Thank you. The companion is on its way to your inbox — please check your spam folder if you don\u2019t see it within a few minutes.', false);
+              setStatus('Thank you. The companion is on its way to your inbox \u2014 please check your spam folder if you don\u2019t see it within a few minutes.', false);
               form.reset();
             } else {
               setStatus((res.data && res.data.error) || 'Something went wrong. Please try again in a moment.', true);
